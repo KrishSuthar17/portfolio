@@ -1,9 +1,10 @@
 # portfolio
-making portfolio with my friend and know how to work multiple people at one project 
 
-extention name
-GlassIt-VSC
-HTML CSS Support
-JavaScript (ES6) code snippets
-Lyzo AI
-vscode-icons
+making portfolio with my friend and know how to work multiple people at one project
+
+extention name<br>
+GlassIt-VSC<br>
+HTML CSS Support<br>
+JavaScript (ES6) code snippets<br>
+Lyzo AI<br>
+vscode-icons<br>
