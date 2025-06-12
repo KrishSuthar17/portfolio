@@ -1,3 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.3) rgba(12, 5, 53, 0.356);
+}
+
+body.dark {
+  background-color: #223;
+}
+body {
+  background-color: white;
+}
+
 @keyframes fadeInUpOnScroll {
   from {
     opacity: 0;
@@ -19,16 +36,6 @@
 #themeChanger:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 5px yellow);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(99, 102, 241, 0.3) rgba(12, 5, 53, 0.356);
 }
 
 .starter {
@@ -97,13 +104,6 @@
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
 
-body.dark {
-  background-color: #223;
-}
-body {
-  background-color: white;
-}
-
 .sky {
   position: absolute;
   width: 100%;
@@ -165,29 +165,6 @@ body {
   }
 }
 
-.shooting-star {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0; /* Changed from left */
-  rotate: -45deg;
-  width: 5em;
-  height: 1px;
-  background: linear-gradient(90deg, #ffffff, transparent);
-  animation: shootingStars 2.5s ease-in-out infinite;
-}
-
-@keyframes shootingStars {
-  from {
-    transform: translateX(0) translateY(0);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(-100em) translateY(0);
-    opacity: 1;
-  }
-}
-
 .color {
   --background-c: linear-gradient(to right, #6366f1, #a855f7);
   background: linear-gradient(to right, #6366f1, #a855f7);
@@ -224,7 +201,7 @@ nav {
   padding: 1rem;
   text-align: end;
 }
-.content {
+.navbar-content {
   display: flex;
   min-width: 80%;
   animation: slideDownFade 1s ease forwards;
@@ -304,12 +281,9 @@ nav ul li a::after {
 nav ul li a:hover {
   transition: all 0.3s ease;
   cursor: pointer;
-
   font-weight: 500;
-
   letter-spacing: 2px;
   font-family: "Poppins", sans-serif;
-
   text-decoration: none;
 }
 
@@ -335,8 +309,6 @@ nav ul li a:active {
   padding: 10px 15px;
   border-radius: 20px;
 }
-/* lfknnlsknflksdnf */
-
 /* add hue rate here and fix this image like a prortfolio */
 #left-side p img {
   height: 1rem;
@@ -356,7 +328,6 @@ nav ul li a:active {
 .card1 {
   background-color: var(--bg-color);
   letter-spacing: 2px;
-
   color: #fff;
 }
 .loader {
@@ -366,7 +337,6 @@ nav ul li a:active {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 40px;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -442,7 +412,7 @@ nav ul li a:active {
 
 #content-text {
   position: relative;
-  right: 2vw;
+
   line-height: 30px;
   font-size: 1.2rem;
   letter-spacing: 1px;
