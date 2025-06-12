@@ -37,7 +37,7 @@ themeChanger.addEventListener("click", () => {
 //
 // go up button
 
-const topBtn = document.getElementById("backToTop");
+const topBtn = document.querySelector(".back-to-top");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
