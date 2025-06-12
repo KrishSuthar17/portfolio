@@ -27,10 +27,14 @@ body {
 }
 
 #themeChanger {
+  color: white;
   background: none;
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
+}
+#themeChanger.dark {
+  color: black;
 }
 
 #themeChanger:hover {
@@ -236,6 +240,7 @@ nav p:hover {
 }
 
 nav ul {
+  font-size: 1.25rem;
   list-style: none;
   display: flex;
   gap: 20px;
@@ -412,9 +417,8 @@ nav ul li a:active {
 
 #content-text {
   position: relative;
-
   line-height: 30px;
-  font-size: 1.2rem;
+  /* font-size: 2rem; */
   letter-spacing: 1px;
   font-weight: 100;
   color: grey;
@@ -548,7 +552,7 @@ nav ul li a:active {
   transform: scale(0.8);
   animation: popIn 0.6s ease-out forwards;
   animation-delay: var(--delay, 0s);
-  animation-delay: 4s;
+  /* animation-delay: 4s; */
 }
 @keyframes popIn {
   0% {
@@ -586,7 +590,7 @@ nav ul li a:active {
   width: 8px;
   background: #fff;
   bottom: -3px;
-  /* left: 50%; */
+  left: 50%;
   transform: translate(-50%) rotate(45deg);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -1125,9 +1129,10 @@ nav ul li a:active {
 }
 
 .right img {
+  border-radius: 50%;
   border: 2px solid #183bff;
-  height: 400px;
-  width: 400px;
+  height: 25rem;
+  width: 25rem;
 }
 
 .animate-on-scroll {

@@ -10,11 +10,17 @@ navLinks.forEach((link) => {
 
 // them
 const themeChanger = document.getElementById("themeChanger");
+const wordElements = document.querySelectorAll(".word");
 
 function applyTheme(isDark) {
   document.body.classList.toggle("dark", isDark);
   themeChanger.textContent = isDark ? "Light Mode🌞" : "Dark Mode 🌙";
   localStorage.setItem("theme", String(isDark));
+
+  // Change color of .word elements based on theme
+  wordElements.forEach((el) => {
+    el.style.color = isDark ? "white" : "black";
+  });
 }
 
 // Detect system preference on first visit if no saved theme
@@ -29,10 +35,9 @@ window.addEventListener("DOMContentLoaded", () => {
 // Toggle on click
 themeChanger.addEventListener("click", () => {
   const isDark = !document.body.classList.contains("dark");
-  // const card1 = document.body.classList.contains("dark");
-
   applyTheme(isDark);
 });
+
 //
 //
 // go up button
