@@ -17,6 +17,10 @@ function applyTheme(isDark) {
   themeChanger.textContent = isDark ? "Light Mode🌞" : "Dark Mode 🌙";
   localStorage.setItem("theme", String(isDark));
 
+  wordElements.forEach((el) => {
+    el.style.color = isDark ? "white" : "black";
+  });
+
   // Change color of .word elements based on theme
   wordElements.forEach((el) => {
     el.style.color = isDark ? "white" : "black";

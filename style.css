@@ -26,15 +26,18 @@ body {
   }
 }
 
+/* Default light theme styles */
 #themeChanger {
-  color: white;
+  color: black;
   background: none;
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-#themeChanger.dark {
-  color: black;
+
+/* Dark theme override */
+body.dark #themeChanger {
+  color: white;
 }
 
 #themeChanger:hover {
