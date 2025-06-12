@@ -1,4 +1,3 @@
-
 @keyframes fadeInUpOnScroll {
   from {
     opacity: 0;
@@ -9,7 +8,6 @@
     transform: translateY(0) scale(1);
   }
 }
-
 
 #themeChanger {
   background: none;
@@ -22,7 +20,6 @@
   transform: scale(1.1);
   filter: drop-shadow(0 0 5px yellow);
 }
-
 
 * {
   margin: 0;
@@ -445,6 +442,8 @@ nav ul li a:active {
 }
 
 #content-text {
+  position: relative;
+  right: 2vw;
   line-height: 30px;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -494,7 +493,10 @@ nav ul li a:active {
   }
 }
 /* works project and contect */
-
+.work {
+  position: relative;
+  right: 0.4vw;
+}
 .work .work-card {
   opacity: 0;
   transform: translateY(40px);
@@ -558,7 +560,6 @@ nav ul li a:active {
   justify-content: center;
 }
 
-
 .wrapper .icon {
   position: relative;
   background: transparent;
@@ -593,7 +594,6 @@ nav ul li a:active {
     transform: scale(1);
   }
 }
-
 
 .wrapper .tooltip {
   position: absolute;
@@ -1093,7 +1093,6 @@ nav ul li a:active {
   }
 }
 
-
 .paragraph {
   font-weight: 500;
   color: gray !important;
@@ -1183,7 +1182,6 @@ nav ul li a:active {
   animation-range-end: entry 40%; /* End when 75% of element has entered viewport */
 }
 
-
 #left-side {
   opacity: 0;
   transform: translateX(-50px);
@@ -1205,9 +1203,6 @@ nav ul li a:active {
   /* animation-delay: var(--delay, 0s); */
   animation-delay: 4s;
 }
-
-
-
 
 .back-to-top {
   position: fixed;
@@ -1353,7 +1348,6 @@ nav ul li a:active {
   animation: right-left-text 1s ease-in;
 }
 
-
 /* responsive code */
 @media screen and (max-width: 768px) {
   /* Nav */
@@ -1376,7 +1370,8 @@ nav ul li a:active {
   }
 
   /* Skills/work section */
-  .skills, .work {
+  .skills,
+  .work {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
