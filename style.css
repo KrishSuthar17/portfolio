@@ -227,7 +227,6 @@ nav {
 .content {
   display: flex;
   min-width: 80%;
-
   animation: slideDownFade 1s ease forwards;
   opacity: 0;
   transform: translateY(-100%);
@@ -1337,6 +1336,8 @@ nav ul li a:active {
 .down-up-t {
   font-size: 3rem;
   animation: down-up-text 1s ease-in;
+
+  animation-delay: var(--delay, 0s);
 }
 
 .top-bottom-t {
