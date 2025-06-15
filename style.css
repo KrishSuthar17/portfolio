@@ -322,6 +322,9 @@ nav ul li a:active {
   padding: 10px 15px;
   border-radius: 20px;
 }
+#left-side p:first-child:hover {
+  background-color: rgba(168, 85, 247, 0.1);
+}
 /* add hue rate here and fix this image like a prortfolio */
 #left-side p img {
   height: 1rem;
@@ -1120,6 +1123,7 @@ nav ul li a:active {
 
 /* Gradient button */
 .gradient-btn {
+  padding: 0.5rem 2rem;
   background: linear-gradient(90deg, #6366f1, #a855f7);
   color: white;
   border: none;
@@ -1127,6 +1131,7 @@ nav ul li a:active {
 
 /* Outline button */
 .outline-btn {
+  padding: 0.8rem 2rem;
   border: 2px solid #a855f7;
   color: #a855f7;
   background: transparent;
@@ -1174,9 +1179,9 @@ nav ul li a:active {
 .main-container {
   font-family: "Trebuchet MS", sans-serif;
   position: relative;
-  height: 300px;
+  top: 1.5rem;
   width: 247px;
-  aspect-ratio: 1.579;
+
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -1199,7 +1204,7 @@ nav ul li a:active {
 /* Main container hover */
 .main-container:hover {
   transform: rotateZ(1deg) rotateY(10deg) scale(1.1);
-  box-shadow: 0 5em 2em #111;
+  box-shadow: 0 5em 2em #a855f72b;
 }
 
 /* Image floating animation */
