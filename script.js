@@ -13,21 +13,22 @@ const themeChanger = document.getElementById("themeChanger");
 const wordElements = document.querySelectorAll(".word");
 
 function applyTheme(isDark) {
+  // Toggle the dark mode class on <body>
   document.body.classList.toggle("dark", isDark);
+
+  // Update the toggle button text
   themeChanger.textContent = isDark ? "Light Mode🌞" : "Dark Mode 🌙";
+
+  // Save user preference
   localStorage.setItem("theme", String(isDark));
 
-  wordElements.forEach((el) => {
-    el.style.color = isDark ? "white" : "black";
-  });
-
-  // Change color of .word elements based on theme
+  // Change text color for elements with class .word
   wordElements.forEach((el) => {
     el.style.color = isDark ? "white" : "black";
   });
 }
 
-// Detect system preference on first visit if no saved theme
+// On first load: use saved theme or system preference
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -36,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
   applyTheme(useDark);
 });
 
-// Toggle on click
+// Toggle theme on button click
 themeChanger.addEventListener("click", () => {
   const isDark = !document.body.classList.contains("dark");
   applyTheme(isDark);
