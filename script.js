@@ -62,3 +62,12 @@ topBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+// photo shine effect
+const border = document.querySelector(".border");
+
+border.addEventListener("mouseenter", () => {
+  border.classList.remove("shine"); // Reset
+  void border.offsetWidth; // Force reflow
+  border.classList.add("shine"); // Add class to trigger ::after animation
+});
