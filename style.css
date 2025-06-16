@@ -12,8 +12,6 @@ body.dark {
   background-color: #223;
 }
 body {
-  /* background-color: white; */
-  z-index: -8;
 }
 /* Default: Light mode */
 .container {
@@ -228,12 +226,12 @@ body.dark .container {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-main {
+.page-1 {
   margin: 0;
-  height: 100vh;
+  height: 100%;
   max-width: 80%;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 10rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -347,7 +345,6 @@ nav ul li a:active {
 /* main section */
 
 #left-side {
-  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1552,12 +1549,12 @@ nav ul li a:active {
   }
 
   .about-section,
-  .right {
+  .page-2 {
     width: 100%;
     text-align: center;
   }
 
-  .right img {
+  .page-2 img {
     width: 80%;
     max-width: 250px;
     margin: auto;
