@@ -1,0 +1,8 @@
+Add feture:
+
+-aos(animation on scroll)
+-making for animated 
+-upload project like Netflix and to-do list
+-add project repo so more people can see my work
+-add icon
+-Welcome page is running at that time user cant scroll 
