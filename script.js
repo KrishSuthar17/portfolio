@@ -11,24 +11,24 @@ navLinks.forEach((link) => {
 // them
 const themeChanger = document.getElementById("themeChanger");
 const wordElements = document.querySelectorAll(".word");
+const nameElement = document.querySelector(".name"); // 👈 new line
 
 function applyTheme(isDark) {
-  // Toggle the dark mode class on <body>
   document.body.classList.toggle("dark", isDark);
-
-  // Update the toggle button text
   themeChanger.textContent = isDark ? "Light Mode🌞" : "Dark Mode 🌙";
-
-  // Save user preference
   localStorage.setItem("theme", String(isDark));
 
-  // Change text color for elements with class .word
+  // Update .word elements
   wordElements.forEach((el) => {
     el.style.color = isDark ? "white" : "black";
   });
+
+  // ✅ Update .name element
+  if (nameElement) {
+    nameElement.style.color = isDark ? "white" : "black";
+  }
 }
 
-// On first load: use saved theme or system preference
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -37,7 +37,6 @@ window.addEventListener("DOMContentLoaded", () => {
   applyTheme(useDark);
 });
 
-// Toggle theme on button click
 themeChanger.addEventListener("click", () => {
   const isDark = !document.body.classList.contains("dark");
   applyTheme(isDark);
@@ -72,3 +71,4 @@ border.addEventListener("mouseenter", () => {
   void border.offsetWidth; // Force reflow
   border.classList.add("shine"); // Add class to trigger ::after animation
 });
+

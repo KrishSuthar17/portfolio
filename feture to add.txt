@@ -18,5 +18,4 @@ Ex in main we have a star's that effect in talking about
 
 to-do---------------------
 -Do nav bar to 1200 to 1300 px max width 
--line 981 play with it page-2 for aligning 80% max-width
 -make it accodingly to the theme in about me section krish suthar
