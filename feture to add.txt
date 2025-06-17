@@ -6,6 +6,8 @@ Add feture:
 -add project repo so more people can see my work
 -add icon
 -Welcome page is running at that time user cant scroll 
+-make a absolute div like in a light color and give animation in whole page accodingly
 
 to-do
-line 981 play with it page-2 for aligning 80% max-width
+-line 981 play with it page-2 for aligning 80% max-width
+-make it accodingly to the theme in about me section krish suthar
