@@ -1,11 +1,13 @@
+feture done list
+-Welcome page is running at that time user cant scroll 
+
 Add feture:
 
 -aos(animation on scroll)
 -making for animated 
 -upload project like Netflix and to-do list
 -add project repo so more people can see my work
--add icon
--Welcome page is running at that time user cant scroll 
+-add icon in skills
 -make a absolute div like in a light color and give animation in whole page accodingly
 
 -Add Slider in model user can change the 3D model
@@ -13,9 +15,3 @@ Add feture:
 Ex in main we have a star's that effect in talking about
 
 -Add project link to GitHub repo Direct link
-
--Learn how to add resume link and
-
-to-do---------------------
--Do nav bar to 1200 to 1300 px max width 
--make it accodingly to the theme in about me section krish suthar
