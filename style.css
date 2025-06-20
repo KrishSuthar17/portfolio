@@ -50,9 +50,10 @@
 }
 
 .bg-color::before {
+  margin-top: 2rem;
   content: "";
   position: absolute;
-  top: -50px;
+  top: -30px;
   left: -50px;
   right: -50px;
   bottom: -50px;
@@ -444,6 +445,7 @@ nav ul li a:active {
 }
 
 #left-side p:first-child {
+  margin-bottom: 2rem;
   font-size: 1rem;
   width: fit-content;
   border: 1px solid #a855f7;
@@ -451,10 +453,14 @@ nav ul li a:active {
   color: #a855f7;
   padding: 10px 15px;
   border-radius: 20px;
+  background-color: rgba(168, 85, 247, 0.3);
+
+  box-shadow: 0 0 56px 4px rgba(255, 192, 203, 0.603);
 }
 #left-side p:first-child:hover {
-  background-color: rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 65px 8px rgba(255, 192, 203, 0.514);
 }
+
 /* add hue rate here and fix this image like a prortfolio */
 #left-side p img {
   height: 1rem;
@@ -1177,7 +1183,7 @@ nav ul li a:active {
 }
 
 .about-cont {
-  margin-top: 10rem;
+  margin-top: 5rem;
   height: 100vh;
   font-size: 3rem;
   font-weight: 600;
@@ -1190,7 +1196,8 @@ nav ul li a:active {
 
 .about-cont h1 {
   font-size: 3rem;
-  background: linear-gradient(-4deg, #6366f1, #a855f7); /* blue to purple */
+  background: linear-gradient(to top, #6366f1, #a855f7);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1208,11 +1215,11 @@ nav ul li a:active {
 }
 
 .paragraph {
-  font-weight: 500;
+  font-weight: 100;
   color: gray !important;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 1.5rem;
-  max-width: 80.7%;
+  max-width: 58%;
 }
 
 .details {
@@ -1243,7 +1250,7 @@ nav ul li a:active {
 }
 .icon {
   margin-right: 0.5rem;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 .btn {
   display: inline-flex;
@@ -1302,6 +1309,9 @@ nav ul li a:active {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+.page-2 {
+  height: 50%;
 }
 
 .main-container {
@@ -1439,6 +1449,93 @@ nav ul li a:active {
     transform: rotate(25deg) translateX(100%);
     opacity: 0;
   }
+}
+
+/* project - marksheet */
+.projects-marksheet {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  border: 1px solid pink;
+  gap: 10rem;
+}
+
+/* From Uiverse.io by nima-mollazadeh */
+.one-section {
+  height: 100%;
+  width: calc(80% / 3);
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  padding: 14px 25px;
+  border-radius: 10px;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.one-section span {
+  position: relative;
+  z-index: 1;
+}
+
+.one-section .animated {
+  /* position: absolute;
+  padding: 8%; */
+  align-items: center;
+  border: 1px solid pink;
+}
+.move {
+  position: absolute;
+  /* top: 50%; */
+  right: -10%;
+  height: 1%;
+  border: 1px solid pink;
+  align-items: center;
+  justify-content: center;
+}
+
+.one-section::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: #272727;
+  border-radius: 9px;
+  transition: 0.5s;
+}
+
+.one-section:hover::before {
+  opacity: 0.7;
+}
+
+.one-section::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  border-radius: 9px;
+  transition: 0.5s;
+  opacity: 0;
+  filter: blur(20px);
+}
+
+.one-section:hover:after {
+  opacity: 1;
+}
+
+.two-section {
+  height: 100%;
+  width: calc(80% / 3);
+  border: 1px solid #00d9ff;
+}
+.three-section {
+  height: 100%;
+  width: calc(80% / 3);
+  border: 1px solid #00d9ff;
 }
 
 .back-to-top {
