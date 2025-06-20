@@ -7,6 +7,12 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(99, 102, 241, 0.3) rgba(12, 5, 53, 0.356);
 }
+/* Prevent scrolling */
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 /* extra */
 
 /* button styling */

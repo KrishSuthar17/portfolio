@@ -1,29 +1,35 @@
+// 3s user can't scroll logic
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.body.classList.remove("no-scroll");
+    document.getElementById("main-content").style.display = "block"; // show rest
+  }, 3000);
+});
+
 const navLinks = document.querySelectorAll("nav ul li a");
 const card1 = document.getElementsByClassName("card1");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", function () {
-    navLinks.forEach((l) => l.classList.remove("active")); // Remove from all
-    this.classList.add("active"); // Add to clicked
+    navLinks.forEach((l) => l.classList.remove("active"));
+    this.classList.add("active");
   });
 });
 
-// them
 const themeChanger = document.getElementById("themeChanger");
 const wordElements = document.querySelectorAll(".word");
-const nameElement = document.querySelector(".name"); // 👈 new line
+const nameElement = document.querySelector(".name");
 
 function applyTheme(isDark) {
   document.body.classList.toggle("dark", isDark);
   themeChanger.textContent = isDark ? "Light Mode🌞" : "Dark Mode 🌙";
   localStorage.setItem("theme", String(isDark));
 
-  // Update .word elements
   wordElements.forEach((el) => {
     el.style.color = isDark ? "white" : "black";
   });
 
-  // ✅ Update .name element
   if (nameElement) {
     nameElement.style.color = isDark ? "white" : "black";
   }
@@ -67,8 +73,7 @@ topBtn.addEventListener("click", () => {
 const border = document.querySelector(".border");
 
 border.addEventListener("mouseenter", () => {
-  border.classList.remove("shine"); // Reset
-  void border.offsetWidth; // Force reflow
-  border.classList.add("shine"); // Add class to trigger ::after animation
+  border.classList.remove("shine");
+  void border.offsetWidth;
+  border.classList.add("shine");
 });
-
