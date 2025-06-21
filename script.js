@@ -3,7 +3,8 @@
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.classList.remove("no-scroll");
-    document.getElementById("main-content").style.display = "block"; // show rest
+    let mainContent = document.getElementsByClassName("main-content");
+    // mainContent.style.display = "block";
   }, 3000);
 });
 

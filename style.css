@@ -146,6 +146,7 @@ body.dark.container {
 /* Default: Light mode */
 
 .starter {
+  /* animation: animation 2s ease-in-out 2; */
   animation: animation 1s 2s both ease-in;
   background-color: black;
   z-index: 10;
@@ -271,7 +272,8 @@ nav {
   width: 5em;
   height: 1px;
   background: linear-gradient(90deg, #ffffff, transparent);
-  animation: shootingStars 2.5s ease-in-out infinite;
+  animation: shootingStars 2.5s ease-in-out 2;
+  /* animation: shootingStars 2.5s ease-in-out infinite; */
   opacity: 0;
 }
 
