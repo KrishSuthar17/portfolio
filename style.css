@@ -1566,6 +1566,22 @@ nav ul li a:active {
   border: 1px solid #00d9ff;
 }
 
+/*  */
+/* skills page-3 */
+.page-3 {
+  margin: 0;
+  height: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  /* padding: 10rem 0; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills-section {
+  color: white;
+}
+
 .back-to-top {
   position: fixed;
   bottom: 30px;

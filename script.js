@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.classList.remove("no-scroll");
     let mainContent = document.getElementsByClassName("main-content");
-    // mainContent.style.display = "block";
+    mainContent.style.display = "block";
   }, 3000);
 });
 
@@ -18,35 +18,36 @@ navLinks.forEach((link) => {
   });
 });
 
-const themeChanger = document.getElementById("themeChanger");
-const wordElements = document.querySelectorAll(".word");
-const nameElement = document.querySelector(".name");
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+  const wordElements = document.querySelectorAll(".word");
+  const nameElement = document.querySelector(".name");
 
-function applyTheme(isDark) {
-  document.body.classList.toggle("dark", isDark);
-  themeChanger.textContent = isDark ? "Light Mode🌞" : "Dark Mode 🌙";
-  localStorage.setItem("theme", String(isDark));
+  function applyTheme(isDark) {
+    document.body.classList.toggle("dark", isDark);
+    localStorage.setItem("theme", isDark);
+    themeToggle.checked = isDark;
 
-  wordElements.forEach((el) => {
-    el.style.color = isDark ? "white" : "black";
-  });
+    wordElements.forEach((el) => {
+      el.style.color = isDark ? "white" : "black";
+    });
 
-  if (nameElement) {
-    nameElement.style.color = isDark ? "white" : "black";
+    if (nameElement) {
+      nameElement.style.color = isDark ? "white" : "black";
+    }
   }
-}
 
-window.addEventListener("DOMContentLoaded", () => {
+  // Load saved theme or system preference
   const savedTheme = localStorage.getItem("theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const useDark = savedTheme !== null ? savedTheme === "true" : prefersDark;
 
   applyTheme(useDark);
-});
 
-themeChanger.addEventListener("click", () => {
-  const isDark = !document.body.classList.contains("dark");
-  applyTheme(isDark);
+  // Change theme on toggle
+  themeToggle.addEventListener("change", () => {
+    applyTheme(themeToggle.checked);
+  });
 });
 
 //
