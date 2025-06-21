@@ -85,9 +85,23 @@
 body {
   background-color: white;
 }
-body.dark .container {
+/*body.dark .container {
   background-image: url(bg.png);
+} */
+body.dark.container {
+  position: relative;
+  overflow: hidden;
 }
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vw;
+  object-fit: cover;
+  z-index: -1;
+}
+
 /* temp animation */
 .background {
   background-color: rgba(255, 192, 203, 0.788);
@@ -1466,7 +1480,6 @@ nav ul li a:active {
   position: absolute;
   width: 100%;
   height: 20%;
-  border: 1px solid pink;
   gap: 10rem;
 }
 
@@ -1477,7 +1490,12 @@ nav ul li a:active {
   position: relative;
   text-decoration: none;
   color: #fff;
-  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  background: linear-gradient(
+    45deg,
+    rgba(42, 29, 221, 0.149),
+    #c222e230,
+    #bc07fd4f
+  );
   padding: 14px 25px;
   border-radius: 10px;
   font-size: 1.25em;
@@ -1485,7 +1503,12 @@ nav ul li a:active {
 }
 
 .one-section span {
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-self: center;
   position: relative;
+  font-size: 2rem;
   z-index: 1;
 }
 
@@ -1495,21 +1518,12 @@ nav ul li a:active {
   align-items: center;
   border: 1px solid pink;
 }
-.move {
-  position: absolute;
-  /* top: 50%; */
-  right: -10%;
-  height: 1%;
-  border: 1px solid pink;
-  align-items: center;
-  justify-content: center;
-}
 
 .one-section::before {
   content: "";
   position: absolute;
   inset: 1px;
-  background: #272727;
+  background-color: #111111;
   border-radius: 9px;
   transition: 0.5s;
 }
@@ -1522,7 +1536,13 @@ nav ul li a:active {
   content: "";
   position: absolute;
   inset: 0px;
-  background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+  background: linear-gradient(
+    45deg,
+    rgba(42, 29, 221, 0.149),
+    #c222e230,
+    #bc07fd4f
+  );
+
   border-radius: 9px;
   transition: 0.5s;
   opacity: 0;
