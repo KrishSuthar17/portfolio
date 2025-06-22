@@ -85,7 +85,7 @@
 body {
   background-color: white;
 }
-/*body.dark .container {
+/* body.dark .container {
   background-image: url(bg.png);
 } */
 body.dark.container {
@@ -414,7 +414,116 @@ nav ul li a:hover {
 nav ul li a:active {
   color: #a855f7;
 }
-#themeChanger {
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73c0fc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: 0.4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  fill: #73c0fc;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */
+.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* #themeChanger {
   position: relative;
   top: -10%;
   font-size: 1.15rem;
@@ -433,8 +542,7 @@ nav ul li a:active {
   transform: scale(1.1);
   filter: drop-shadow(0 0 5px yellow);
 }
-
-.sky {
+*/ .sky {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -1206,7 +1314,7 @@ nav ul li a:active {
 
 .about-cont {
   margin-top: 5rem;
-  height: 100vh;
+  height: 100%;
   font-size: 3rem;
   font-weight: 600;
   display: flex;
@@ -1245,7 +1353,8 @@ nav ul li a:active {
 }
 
 .details {
-  margin-top: 2rem;
+  max-width: 80%;
+  margin: auto;
 }
 .button-group {
   display: flex;
@@ -1479,9 +1588,9 @@ nav ul li a:active {
   display: flex;
   align-items: center;
   justify-self: center;
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 20%;
+  height: 10rem;
   gap: 10rem;
 }
 
@@ -1500,7 +1609,7 @@ nav ul li a:active {
   );
   padding: 14px 25px;
   border-radius: 10px;
-  font-size: 1.25em;
+  /* font-size: 1.25em; */
   cursor: pointer;
 }
 
@@ -1576,10 +1685,80 @@ nav ul li a:active {
   /* padding: 10rem 0; */
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 .skills-section {
+  width: 50%;
   color: white;
+}
+
+header h2 {
+  margin-top: 5%;
+}
+
+.language-container {
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* ///////////////////////// */
+.language-container .lang {
+  position: relative;
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popIn 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.language-container .lang:hover {
+  background: linear-gradient(to right, #6365f177, #a955f783);
+  box-shadow: 0 0 10px 10px #a955f767;
+  border-radius: 50%;
+}
+
+/* Tooltip inside skill icons */
+.language-container .tooltip {
+  position: absolute;
+  font-weight: 600;
+  top: 0;
+  font-size: 1rem;
+  background: linear-gradient(to right, #a855f7, #a12fff);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.language-container .tooltip::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Show tooltip on hover */
+.language-container .lang:hover .tooltip {
+  top: -35px;
+  opacity: 1;
+  pointer-events: auto;
+}
+/* /////////////////////// */
+.second-side {
+  width: 25%;
 }
 
 .back-to-top {
