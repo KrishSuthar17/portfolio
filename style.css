@@ -1686,7 +1686,10 @@ nav ul li a:active {
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
+
+  align-items: flex-start; /* optional: aligns child divs to left */
 }
+
 .skills-section {
   width: 50%;
   color: white;
@@ -1756,8 +1759,16 @@ header h2 {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* front-end side */
+.font-end {
+  display: flex;
+  flex-direction: column;
+}
+
 /* /////////////////////// */
 .second-side {
+  align-items: center;
   width: 25%;
 }
 
