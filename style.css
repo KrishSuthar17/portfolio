@@ -1772,6 +1772,247 @@ header h2 {
   width: 25%;
 }
 
+/* page-4 */
+.page-4 {
+  margin: auto;
+  height: 100%;
+  max-width: 80%;
+  position: relative;
+}
+.wave-group {
+  position: relative;
+}
+
+.wave-group .input:focus {
+  outline: none;
+}
+
+.wave-group .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-30px);
+  font-size: 14px;
+  color: #5264ae;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.input__container {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.input__container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(25px);
+  border-radius: 20px;
+  background-color: #e499ff;
+  background-image: radial-gradient(
+      at 47% 69%,
+      hsla(17, 62%, 65%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 9% 32%, hsla(222, 75%, 60%, 1) 0px, transparent 50%);
+}
+
+.input__description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  text-align: start;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.input {
+  margin-bottom: 2rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.7rem;
+  padding-left: 0.9em;
+  border-radius: 10px;
+  background: #fff;
+  transition: background 300ms, color 300ms;
+}
+
+.input:hover,
+.input:focus {
+  background: rgb(0, 0, 0);
+  color: #fff;
+}
+
+.submit {
+  width: 100%;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #e499ff;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 1%;
+  width: 99%;
+  height: 6%;
+  background-color: #912fec79;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.submit::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 100%;
+  left: 1%;
+  width: 99%;
+  height: 6%;
+  background-color: #912fec75;
+  transition: 0.5s;
+}
+
+.submit:hover::before,
+.submit:hover::after {
+  transform: scale(0);
+}
+
+.submit:hover {
+  box-shadow: inset 0px 0px 25px #942ef3;
+}
+
+.seprater {
+  height: 1px;
+  width: 100%;
+  border: 1px solid gray;
+  margin: 3rem 0 3rem 0;
+}
+
+.connect-me {
+  width: 100%;
+  background-color: rgba(58, 55, 55, 0.699);
+  border-radius: 10px;
+}
+.Connect-mess {
+  max-width: 90%;
+  margin: auto;
+}
+.button-con {
+  max-width: 95%;
+  margin: 5%;
+  padding: 10% 26%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgb(0 107 179);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  color: #ffff;
+  gap: 3rem;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-con:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button-con:hover .icon {
+  transform: translate(4px);
+}
+
+.button-con:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button-con::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
 .back-to-top {
   position: fixed;
   bottom: 30px;
