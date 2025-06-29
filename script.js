@@ -19,7 +19,7 @@ navLinks.forEach((link) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.getElementById("themeToggle");
+  const themeToggle = document.getElementsByClassName("themeToggle");
   const wordElements = document.querySelectorAll(".word");
   const nameElement = document.querySelector(".name");
 
