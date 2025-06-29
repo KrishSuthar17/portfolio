@@ -97,7 +97,7 @@ body.dark.container {
   top: 0;
   left: 0;
   width: 100%;
-  height: 200vw;
+  height: 210vw;
   object-fit: cover;
   z-index: -1;
 }
@@ -1778,6 +1778,9 @@ header h2 {
   height: 100%;
   max-width: 80%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .wave-group {
   position: relative;
@@ -1807,7 +1810,7 @@ header h2 {
 .wave-group .input:valid ~ label .label-char {
   transform: translateY(-30px);
   font-size: 14px;
-  color: #5264ae;
+  color: #000000;
 }
 
 .wave-group .bar:before {
@@ -1823,12 +1826,19 @@ header h2 {
   width: 50%;
 }
 
+.hader-page-4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
 .input__container {
   max-width: 30rem;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 20px;
   position: relative;
@@ -1844,7 +1854,7 @@ header h2 {
   z-index: -1;
   filter: blur(25px);
   border-radius: 20px;
-  background-color: #e499ff;
+  background-color: #e499ff65;
   background-image: radial-gradient(
       at 47% 69%,
       hsla(17, 62%, 65%, 1) 0px,
@@ -2015,12 +2025,15 @@ header h2 {
 }
 
 .button-con-square {
+  padding: 4%;
+  display: flex;
   text-decoration: none;
   color: white;
   overflow: hidden;
   border: 1px solid pink;
   border-radius: 10px;
   margin: 2%;
+  gap: 7%;
 }
 .square-links::before {
   content: "";
@@ -2062,7 +2075,7 @@ header h2 {
   color: #ffff;
   /* gap: ; */
   font-weight: bold;
-  border: 3px solid #ffffff4d;
+  border: 1px solid #ffffff0e;
   outline: none;
   overflow: hidden;
   font-size: 1rem;
@@ -2078,10 +2091,13 @@ header h2 {
   text-decoration: none;
   color: white;
   border-radius: 10px;
-  width: 25%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.square-img {
+  align-items: center;
 }
 
 @keyframes shine {
@@ -2151,6 +2167,13 @@ header h2 {
 
 .cont {
   margin: 3rem;
+}
+
+.row {
+  margin-top: 3rem;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(45deg, #8a47f7c7, #f84e4e36, #3701fa94);
 }
 
 /* responsive code */
