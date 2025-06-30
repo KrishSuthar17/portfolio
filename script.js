@@ -1,3 +1,7 @@
+// when user refresh the page
+
+window.history.scrollRestoration = "manual"; // Stop browser from restoring scroll
+window.scrollTo(0, 0);
 // 3s user can't scroll logic
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -78,4 +82,11 @@ border.addEventListener("mouseenter", () => {
   border.classList.remove("shine");
   void border.offsetWidth;
   border.classList.add("shine");
+});
+
+// background ball animation
+AOS.init({
+  useClassNames: true, // Enable custom class-based triggers
+  initClassName: false,
+  animatedClassName: "scroll-anim", // This class will be added
 });
