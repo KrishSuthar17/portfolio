@@ -85,8 +85,27 @@ border.addEventListener("mouseenter", () => {
 });
 
 // background ball animation
-AOS.init({
-  useClassNames: true, // Enable custom class-based triggers
-  initClassName: false,
-  animatedClassName: "scroll-anim", // This class will be added
-});
+
+const ball = document.getElementById("ball");
+const sections = document.querySelectorAll(".page");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // If section is fully in view, move the ball
+        ball.classList.add("move");
+
+        // After short delay, reset it (like toggle effect)
+        setTimeout(() => {
+          ball.classList.remove("move");
+        }, 1000); // adjust delay to match your animation
+      }
+    });
+  },
+  {
+    threshold: 0.6, // Trigger when 60% of section is visible
+  }
+);
+
+sections.forEach((section) => observer.observe(section));

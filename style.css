@@ -124,7 +124,7 @@ body.dark.container {
 
 @keyframes scroll-moving {
   0% {
-    transform: translateY(-50%) translateX(0);
+    transform: translateY(0%) translateX(0);
   }
   50% {
     transform: translateY(-50%) translateX(5rem);
@@ -747,6 +747,7 @@ nav ul li a:active {
   position: relative;
   right: 0.4vw;
 }
+
 .type1::after {
   content: "";
   position: absolute;
@@ -1375,6 +1376,7 @@ nav ul li a:active {
   /* font-size: 1.2rem; */
 }
 .btn {
+  box-shadow: -8px 0 16px #6365f18c, 0px 0 20px #7b4df5, 8px 0 16px #840df3;
   height: 3rem;
   width: 10.5rem;
   position: relative;
