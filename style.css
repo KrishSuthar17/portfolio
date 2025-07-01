@@ -2108,10 +2108,11 @@ header h2 {
 .second-section {
   width: 50%;
   height: 50rem; /* Add this */
-  background: #111;
+  /* background: #111; */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
 }
 
 @keyframes shine {
