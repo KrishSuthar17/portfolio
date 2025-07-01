@@ -37,6 +37,14 @@
   -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
+img {
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1) translateX(20px) translateY(20px); /* Scale up by 10% */
+}
+
 .color {
   --background-c: linear-gradient(to right, #6366f1, #a855f7);
   background: linear-gradient(to right, #6366f1, #a855f7);
@@ -2092,6 +2100,17 @@ header h2 {
   justify-content: center;
 }
 .square-img {
+  align-items: center;
+}
+
+/* second section */
+
+.second-section {
+  width: 50%;
+  height: 50rem; /* Add this */
+  background: #111;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 

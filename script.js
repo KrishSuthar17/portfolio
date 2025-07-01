@@ -109,3 +109,14 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+// 3d
+
+const model = document.getElementById("model");
+
+model.addEventListener("load", () => {
+  setTimeout(() => {
+    model.pause(); // ⏹️ Pause after 2 seconds
+    console.log("Animation paused at 2s ✅");
+  }, 1800); // 2 seconds
+});

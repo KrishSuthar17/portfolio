@@ -24,6 +24,11 @@
       type="module"
       src="https://unpkg.com/@splinetool/viewer@1.8.9/build/spline-viewer.js"
     ></script>
+
+<!-- 3d model script -->
+ <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
   </head>
   <body class="no-scroll">
     <div class="container"><img src="bg.png" loading="lazy" alt="Background" class="bg-img">
@@ -897,7 +902,7 @@ management.</pre>
 
       <a style="text-decoration: none;" href="https://www.linkedin.com/in/krish-suthar-5735ba314/" target="_blank">
         <div class="button-con">
-          <img src="logos/linkedin.svg" height="30" width="30" alt="">
+          <img src="logos/linkedin.svg" height="30" width="30" alt="linkedin logo">
           <p> Let's Connect <br>
           on Linkedin</p>
           <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
@@ -914,7 +919,7 @@ management.</pre>
         <div class="square-contant" >
         <a href="https://www.instagram.com/kri_sh_s/" target="_blank">
           <div class="button-con-square">
-            <img class="square-img" src="logos/instagram.svg" height="30" width="30" alt="">
+            <img class="square-img" src="logos/instagram.svg" height="30" width="30" alt="instagram logo">
             <p class="center">Instagram <br>
             @kri_sh_s</p>
           </div>
@@ -922,7 +927,7 @@ management.</pre>
 
         <a href="https://github.com/KrishSuthar17" target="_blank">
           <div class="button-con-square">
-            <img class="square-img" src="logos/github.svg" height="30" width="30" alt="">
+            <img class="square-img" src="logos/github.svg" height="30" width="30" alt="GitHub logo">
             <p class="center">GitHub <br>
               KrishSuthar17</p>
           </div>
@@ -931,7 +936,7 @@ management.</pre>
         
         <a class="square-contant-right button-con-square" href="https://www.youtube.com/" target="_blank">
           
-            <img src="logos/youtube.svg" height="30" width="30" alt="">
+            <img src="logos/youtube.svg" height="30" width="30" alt="youtube logo">
             <p>YouTube  <br>
               KrishSuthar</p>
           </a>
@@ -942,7 +947,19 @@ management.</pre>
 </div>
 
 <div class="second-section">
-<iframe src='https://my.spline.design/interactivespherescopy-xWE3T1Cuix4TWIxYasJKnHWw/' frameborder='0' width='100%' height='100%'></iframe>
+
+ 
+<model-viewer
+  id="model"
+  src="logos/spider_man_classic_suit_mcu.glb"
+ autoplay
+  animation-loop="false"
+  camera-controls
+  environment-image="neutral"
+  shadow-intensity="1"
+  exposure="1"
+  style="width: 600px; height: 1000px; background: transparent;">
+</model-viewer>
 </div>
     </div>
     <button class="back-to-top">↑</button>
