@@ -22,38 +22,31 @@ navLinks.forEach((link) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const themeToggle = document.getElementsByClassName("themeToggle");
-  const wordElements = document.querySelectorAll(".word");
-  const nameElement = document.querySelector(".name");
+// Theme toggle functionality
+// This code toggles the theme between light and dark mode
 
-  function applyTheme(isDark) {
-    document.body.classList.toggle("dark", isDark);
-    localStorage.setItem("theme", isDark);
-    themeToggle.checked = isDark;
+const toggle = document.querySelector(".input");
+const body = document.body;
+const bgImg = document.querySelector(".bg-img");
 
-    wordElements.forEach((el) => {
-      el.style.color = isDark ? "white" : "black";
-    });
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark");
+  toggle.checked = true;
+  bgImg.src = "bg-dark.png"; // dark image
+}
 
-    if (nameElement) {
-      nameElement.style.color = isDark ? "white" : "black";
-    }
+toggle.addEventListener("change", () => {
+  body.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+    bgImg.src = "bg-dark.png"; // ✅ switch to dark image
+  } else {
+    localStorage.setItem("theme", "light");
+    bgImg.src = "bg.png"; // ✅ back to light image
   }
-
-  // Load saved theme or system preference
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const useDark = savedTheme !== null ? savedTheme === "true" : prefersDark;
-
-  applyTheme(useDark);
-
-  // Change theme on toggle
-  themeToggle.addEventListener("change", () => {
-    applyTheme(themeToggle.checked);
-  });
 });
-
 //
 //
 // go up button
