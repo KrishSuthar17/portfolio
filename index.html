@@ -7,20 +7,27 @@
     <title>Krish Suthar | Portfolio website</title>
     <link rel="stylesheet" href="style.css" />
     <!-- for website smother add this line -->
-
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> 
-     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>-->
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
-    <!-- aos css -->
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" /> -->
-     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    
+    <!-- aos css -->
+   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init(
+    {
+       once: false,
+    mirror: true, // allow animation when scrolling back up
+    duration: 1000'ease-in-out', // smoothness
+    mirror: true           // this is the magic fix!
+    }
+  );
+</script>
+
+
+
     <script
       type="module"
       src="https://unpkg.com/@splinetool/viewer@1.8.9/build/spline-viewer.js"
@@ -676,7 +683,7 @@
         <br>
         <br>
         <br>
-      <div id="About" class="animate-on-scroll">
+      <div id="About">
         <h2 align="center" class="color">About Me</h2>
         <div class="Text color">
           <img src="star.png" alt="star images" />
@@ -685,9 +692,12 @@
         </div>
 
         <div class="about-cont">
+
           <section class="about-section">
             <h1>Hello, I'm</h1>
-            <span class="name" style="color: wheat;">Krish Suthar</span>
+            <div class="name">
+            <span style="color: wheat;">Krish Suthar</span>
+            </div>
 
             <div>
               <p class="paragraph">
@@ -697,8 +707,9 @@
                 visually engaging.
               </p>
             </div>
-
           </section>
+          
+
           <section class="page-2">
             <div class="main-container">
               <div class="border">
@@ -846,7 +857,7 @@ management.</pre>
 </div>
 </div>
 
-      <div class="second-side">
+      <div class="second-side" >
         <img loading="lazy" src="Coding.gif" alt="My animation" height="400px" width="400px" />
       </div>
     </div>
@@ -979,13 +990,18 @@ management.</pre>
 
   <div class="row"></div>
     <h3 align="center" style="color: white; margin-top: 1%;"> &copy 2025 KrishSuthar. All Right Reserved</h3>
-    <script src="script.js"></script>
-    <!-- for website smother -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
 
-    <!-- aos -->
-     
-<!-- <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- Locomotive Scroll -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+<!-- GSAP Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+<!-- GSAP ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+<!-- Your custom script -->
+<script src="script.js"></script>
+
   </body>
 </html>

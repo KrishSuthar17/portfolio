@@ -2,6 +2,7 @@
 
 window.history.scrollRestoration = "manual"; // Stop browser from restoring scroll
 window.scrollTo(0, 0);
+
 // 3s user can't scroll logic
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -41,10 +42,10 @@ toggle.addEventListener("change", () => {
 
   if (body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
-    bgImg.src = "bg-dark.png"; // ✅ switch to dark image
+    bgImg.src = "bg-dark.png"; // switch to dark image
   } else {
     localStorage.setItem("theme", "light");
-    bgImg.src = "bg.png"; // ✅ back to light image
+    bgImg.src = "bg.png"; // back to light image
   }
 });
 //
@@ -97,7 +98,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.6, // Trigger when 60% of section is visible
+    threshold: 0.6,
   }
 );
 
@@ -109,13 +110,96 @@ const model = document.getElementById("model");
 
 model.addEventListener("load", () => {
   setTimeout(() => {
-    model.pause(); // ⏹️ Pause after 2 seconds
-    console.log("Animation paused at 2s ✅");
-  }, 1800); // 2 seconds
+    model.pause();
+    console.log("Animation paused at 2s");
+  }, 1800);
 });
 
-// aos
-AOS.init({
-  duration: 1000, // animation duration in ms
-  once: true, // whether animation should happen only once - while scrolling down
+// Gsap animations
+
+// this is page-2 gsap animation
+gsap.from("#About h2, #About .Text", {
+  opacity: 0,
+  duration: 1,
+  y: 100,
+  scale: 0.4,
+  stagger: 0.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#About h2",
+    scroller: body,
+    // markers: true,
+    start: "top 95%",
+    end: "bottom 75%",
+    scrub: true,
+  },
 });
+
+gsap.from(".about-section, .about-section .name, .about-section p", {
+  opacity: 0,
+  duration: 2,
+  stagger: 0.5,
+
+  x: -100,
+  // y: 100,
+  scrollTrigger: {
+    trigger: ".about-cont",
+    scroller: body,
+    // markers: true,
+    scrub: 2,
+    start: "top 90%",
+    end: "bottom 80%",
+  },
+});
+
+gsap.from(".page-2", {
+  opacity: 0,
+  duration: 2,
+  stagger: 0.2,
+  // y: 100,
+  x: 100,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".about-cont",
+    scroller: body,
+    // markers: true,
+    scrub: 2,
+    start: "top 90%",
+    end: "bottom 80%",
+  },
+});
+
+gsap.from(".details .button-group, .projects-marksheet a", {
+  opacity: 0,
+  duration: 2,
+  stagger: 0.5,
+  y: 200,
+  // x: 100,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".details",
+    scroller: body,
+    // markers: true,
+    scrub: 2,
+    start: "top 90%",
+    end: "bottom 100%",
+  },
+});
+
+// this is page-3 gsap animation
+
+// gsap.to(".about-cont", {
+//   transform: "translateY(-150%)",
+//   duration: 1,
+//   y: 0,
+//   opacity: 0,
+//   scrollTrigger: {
+//     trigger: ".about-cont",
+//     scroller: body,
+//     markers: true,
+//     start: "top 70%",
+//     end: "bottom center",
+//     scrub: 2,
+//     toggleActions: "play none none reverse",
+//   },
+// });
