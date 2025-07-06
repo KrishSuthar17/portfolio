@@ -95,8 +95,8 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 body.dark {
-  background-color: white; /* or dark background image */
-  color: white;
+  background-color: #0d0d0d;
+  color: #f1f1f1;
 }
 
 body.dark.container {
@@ -454,6 +454,12 @@ nav ul li a:active {
   z-index: 2;
   background-color: #e8e8e8;
   transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #2196f3;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
 
 .sun svg {
@@ -1440,42 +1446,6 @@ nav ul li a:active {
 .outline-btn:hover {
   background-color: rgba(168, 85, 247, 0.1);
 }
-
-/* animation section for page-2  */
-/* .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.animate-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.animate-on-scroll {
-  animation-name: fadeInUpOnScroll;
-  animation-duration: 4s;
-  animation-fill-mode: both;
-  animation-timeline: view();
-  animation-range-start: entry 20%;
-  animation-range-end: entry 50%;
-}
-@keyframes fadeInUpOnScroll {
-  0% {
-    opacity: 0.1;
-    transform: translateY(50px) scale(0);
-  }
-
-  50% {
-    opacity: 0.5;
-    transform: translateY(25px) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-} */
 
 .page-2 {
   height: 50%;

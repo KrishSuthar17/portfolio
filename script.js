@@ -28,13 +28,11 @@ navLinks.forEach((link) => {
 
 const toggle = document.querySelector(".input");
 const body = document.body;
-const bgImg = document.querySelector(".bg-img");
 
 // Load saved theme
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggle.checked = true;
-  bgImg.src = "bg-dark.png"; // dark image
 }
 
 toggle.addEventListener("change", () => {
@@ -42,12 +40,11 @@ toggle.addEventListener("change", () => {
 
   if (body.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
-    bgImg.src = "bg-dark.png"; // switch to dark image
   } else {
     localStorage.setItem("theme", "light");
-    bgImg.src = "bg.png"; // back to light image
   }
 });
+
 //
 //
 // go up button
@@ -187,6 +184,53 @@ gsap.from(".details .button-group, .projects-marksheet a", {
 });
 
 // this is page-3 gsap animation
+// Animate #About section
+gsap.from("#About h2, #About .Text", {
+  opacity: 0,
+  duration: 1,
+  y: 100,
+  scale: 0.4,
+  stagger: 0.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#About",
+    scroller: "#main", // change to 'body' if not using locomotive
+    start: "top 95%",
+    end: "bottom 75%",
+    scrub: true,
+  },
+});
+
+// Animate #details and heading
+gsap.from("#details, #details-skills", {
+  opacity: 0,
+  y: 100,
+  scale: 0.4,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#details-skills",
+    scroller: "#main", // or 'body' if no locomotive
+    start: "top 95%",
+    end: "bottom 75%",
+    scrub: true,
+  },
+});
+
+// Animate skills section
+gsap.from(".skills-section", {
+  opacity: 0,
+  y: 100,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".skills-section",
+    scroller: "#main", // or 'body'
+    start: "top 95%",
+    end: "bottom 75%",
+    scrub: true,
+  },
+});
 
 // gsap.to(".about-cont", {
 //   transform: "translateY(-150%)",

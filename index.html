@@ -11,23 +11,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
-
-    <!-- aos css -->
-   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init(
-    {
-       once: false,
-    mirror: true, // allow animation when scrolling back up
-    duration: 1000'ease-in-out', // smoothness
-    mirror: true           // this is the magic fix!
-    }
-  );
-</script>
-
-
-
     <script
       type="module"
       src="https://unpkg.com/@splinetool/viewer@1.8.9/build/spline-viewer.js"
@@ -39,7 +22,7 @@
 
   </head>
   <body class="no-scroll">
-    <div class="container"><img src="bg.png" loading="lazy" alt="Background" class="bg-img">
+    <div class="container">
       <div class="background scroll-anim" data-aos="my-trigger"></div>
       <div class="starter">
         <div class="temp-content">
@@ -390,13 +373,17 @@
             <button class="skill">DSA (C)</button>
             <button class="skill">OOP (PYTHON)</button>
           </div>
+          <a href="#About-me">
           <div class="work">
             <button class="btn type1 work-card" style="--delay: 0.2s">
               <span class="btn-txt">Project</span>
             </button>
+          </a>
+            <a href="#page-4">
             <button class="btn type1 work-card " style="--delay: 0.2s">
-              <span class="btn-txt">Contect</span>
+              <span class="btn-txt">Contact</span>
             </button>
+            </a>
           </div>
 
           <div class="contect">
