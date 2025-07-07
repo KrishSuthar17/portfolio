@@ -218,19 +218,6 @@ gsap.from("#details, #details-skills", {
 });
 
 // Animate skills section
-gsap.from(".skills-section", {
-  opacity: 0,
-  y: 100,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".skills-section",
-    scroller: "#main", // or 'body'
-    start: "top 95%",
-    end: "bottom 75%",
-    scrub: true,
-  },
-});
 
 // gsap.to(".about-cont", {
 //   transform: "translateY(-150%)",
