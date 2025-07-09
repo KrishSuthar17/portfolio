@@ -202,22 +202,20 @@ gsap.from("#About h2, #About .Text", {
 });
 
 // Animate #details and heading
-gsap.from("#details, #details-skills", {
-  opacity: 0,
-  y: 100,
-  scale: 0.4,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: "#details-skills",
-    scroller: "#main", // or 'body' if no locomotive
-    start: "top 95%",
-    end: "bottom 75%",
-    scrub: true,
-  },
-});
 
 // Animate skills section
+
+// currently not working
+gsap.from("#details", {
+  opacity: 0,
+  y: 100,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#details",
+    start: "top 90%",
+    scroller: "#main", // or remove if not using custom scroll
+  },
+});
 
 // gsap.to(".about-cont", {
 //   transform: "translateY(-150%)",
