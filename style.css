@@ -135,13 +135,13 @@ img:hover {
 } */
 
 body {
-  background-color: white;
+  background-color: #0d0d0d;
   color: white;
   transition: background 0.3s, color 0.3s;
   overflow-x: hidden;
 }
 body.dark {
-  background-color: #0d0d0d;
+  background-color: white;
   color: #f1f1f1;
 }
 
@@ -149,6 +149,12 @@ body.dark.container {
   position: relative;
   overflow: hidden;
 }
+html,
+body {
+  overflow-x: hidden;
+  /* max-width: 100%; */
+}
+
 .bg-img {
   position: absolute;
   top: 0;
@@ -373,6 +379,9 @@ nav {
   animation-delay: 3s;
 }
 
+.navbar-content ul {
+  justify-content: center;
+}
 @keyframes slideDownFade {
   to {
     opacity: 1;
@@ -792,7 +801,7 @@ input:checked + .slider:before {
   cursor: pointer;
   padding: 0.8em 1.6em;
   min-width: 120px;
-  min-height: 44px;
+  /* min-height: 44px; */
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -860,13 +869,17 @@ input:checked + .slider:before {
 }
 
 .button {
-  height: 3rem;
-  width: 10.5rem;
+  height: 3rem; /* Changes */
+  max-width: 100%;
   position: relative;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background-color: transparent;
   cursor: pointer;
   border: 2px solid #868686;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 30px;
   color: #a3a3a3;
   transition: all 0.5s ease-in-out;
@@ -1434,7 +1447,7 @@ input:checked + .slider:before {
   color: gray !important;
   margin-top: 1rem;
   font-size: 1.5rem;
-  max-width: 58%;
+  max-width: 60%;
 }
 
 .details {
@@ -2247,8 +2260,8 @@ header h2 {
   }
   to {
     opacity: 0;
-    /* display: none; */
-    z-index: 0;
+    display: none;
+    z-index: -99;
   }
 }
 
@@ -2270,6 +2283,10 @@ header h2 {
   }
 }
 @media screen and (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: center;
+  }
   nav {
     flex-wrap: wrap;
     gap: 1rem;
@@ -2286,6 +2303,12 @@ header h2 {
     display: flex;
     /* flex-direction: column-reverse; */
     align-items: end;
+  }
+  .skills-container,
+  .button-group,
+  .card-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   #left-side p:first-child {
@@ -2313,8 +2336,8 @@ header h2 {
   }
 
   #About {
-    margin: 80rem 0 0 0;
-    min-width: 100%;
+    margin: 20rem 0 0 0;
+    max-width: 100%;
   }
 
   .projects-marksheet {
@@ -2357,7 +2380,7 @@ header h2 {
   }
 
   .container {
-    height: 40rem;
+    height: 100%;
     width: 100%;
   }
   model-viewer {
@@ -2406,5 +2429,39 @@ header h2 {
     right: 20px;
     padding: 12px 15px;
     font-size: 18px;
+  }
+  .paragraph {
+    margin: 4rem;
+    width: 99% !important;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+
+  .main-container {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-container,
+  .card-container,
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-section,
+  .content,
+  .skills,
+  .work,
+  .about-section {
+    padding: 1rem;
+    text-align: center;
   }
 }
