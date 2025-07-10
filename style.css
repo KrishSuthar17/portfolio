@@ -127,13 +127,6 @@ img:hover {
   -webkit-text-fill-color: transparent;
 }
 
-/* body section */
-/* if body.dark.container is not worling then use body.dark */
-
-/* body.dark {
-  background-image: url(bg.png);
-} */
-
 body {
   background-color: #0d0d0d;
   color: white;
@@ -152,7 +145,6 @@ body.dark.container {
 html,
 body {
   overflow-x: hidden;
-  /* max-width: 100%; */
 }
 
 .bg-img {
@@ -200,7 +192,6 @@ body {
 /* Default: Light mode */
 
 .starter {
-  /* animation: animation 2s ease-in-out 2; */
   animation: animation 1s 2s both ease-in;
   background-color: black;
   z-index: 10;
@@ -250,7 +241,6 @@ body {
   100% {
     letter-spacing: 0px;
     opacity: 0;
-    /* display: none; */
     z-index: 0;
   }
 }
@@ -281,7 +271,6 @@ body {
   100% {
     letter-spacing: 0px;
     opacity: 0;
-    /* display: none; */
     z-index: 0;
   }
 }
@@ -327,7 +316,6 @@ nav {
   height: 1px;
   background: linear-gradient(90deg, #ffffff, transparent);
   animation: shootingStars 2.5s ease-in-out 2;
-  /* animation: shootingStars 2.5s ease-in-out infinite; */
   opacity: 0;
 }
 
@@ -393,7 +381,6 @@ nav a {
   margin-right: auto;
   font-size: 24px;
   font-weight: bold;
-  /* background: linear-gradient(to right, #a855f7, #a12fff); */
   background: linear-gradient(to right, #6365f17e, #a955f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -404,7 +391,6 @@ nav a {
 
 nav p:hover {
   content: "";
-  /* position: absolute; */
   top: -50px;
   left: -50px;
   right: -50px;
@@ -784,8 +770,8 @@ input:checked + .slider:before {
   left: 0.3rem;
   font-size: 1.3rem;
   letter-spacing: 1px;
-  font-weight: 100;
-  color: grey;
+  font-weight: 100 !important;
+  color: grey !important;
 }
 
 /* skills  */
@@ -801,7 +787,6 @@ input:checked + .slider:before {
   cursor: pointer;
   padding: 0.8em 1.6em;
   min-width: 120px;
-  /* min-height: 44px; */
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -823,7 +808,6 @@ input:checked + .slider:before {
   opacity: 0;
   transform: translateY(40px);
   animation: slideDownFade 0.8s ease forwards;
-  /* animation-delay: var(--delay, 0s); */
   animation-delay: 4s;
 }
 .skill:is(:focus, :focus-visible, :active) {
@@ -864,7 +848,6 @@ input:checked + .slider:before {
   opacity: 0;
   transform: translateY(40px);
   animation: slideDownFade 1s ease forwards;
-  /* animation-delay: var(--delay, 0s); */
   animation-delay: 4s;
 }
 
@@ -879,7 +862,6 @@ input:checked + .slider:before {
   background-color: transparent;
   cursor: pointer;
   border: 2px solid #868686;
-  /* overflow: hidden; */
   border-radius: 30px;
   color: #a3a3a3;
   transition: all 0.5s ease-in-out;
@@ -1409,18 +1391,6 @@ input:checked + .slider:before {
   font-weight: 600;
   display: flex;
 }
-/* .about-cont::before {
-  content: "";
-  position: absolute;
-  top: -2rem;
-  left: -5rem;
-  right: 75rem;
-  bottom: 0;
-  background: linear-gradient(to right, #6365f152, #a955f736);
-  border-radius: 50%;
-  filter: blur(50px);
-  z-index: -1;
-} */
 
 .about-cont h1 {
   font-size: 3rem;
@@ -1479,7 +1449,6 @@ input:checked + .slider:before {
 }
 .icon {
   margin-right: 0.5rem;
-  /* font-size: 1.2rem; */
 }
 .btn {
   box-shadow: -8px 0 16px #6365f18c, 0px 0 20px #7b4df5, 8px 0 16px #840df3;
@@ -1557,8 +1526,6 @@ input:checked + .slider:before {
 
 /* Card container (can be used for background or shadow effects) */
 .card2 {
-  /* width: 100%;
-  height: 100%; */
   border-radius: 50%;
   background-color: transparent;
   position: relative;
@@ -1596,8 +1563,6 @@ input:checked + .slider:before {
   transform: scale(1.05);
 }
 .border {
-  /* width: 12.5em;
-  height: 12.5em; */
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -1675,7 +1640,6 @@ input:checked + .slider:before {
   );
   padding: 14px 25px;
   border-radius: 10px;
-  /* font-size: 1.25em; */
   cursor: pointer;
 }
 
@@ -1690,8 +1654,6 @@ input:checked + .slider:before {
 }
 
 .one-section .animated {
-  /* position: absolute;
-  padding: 8%; */
   align-items: center;
   border: 1px solid pink;
 }
@@ -1759,11 +1721,8 @@ input:checked + .slider:before {
   height: 100%;
   max-width: 80%;
   margin: 0 auto;
-  /* padding: 10rem 0; */
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
-
   align-items: flex-start; /* optional: aligns child divs to left */
 }
 
@@ -2193,7 +2152,7 @@ header h2 {
 .second-section {
   width: 50%;
   height: 50rem; /* Add this */
-  /* background: #111; */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2301,7 +2260,7 @@ header h2 {
     font-size: 3.25rem;
     list-style: none;
     display: flex;
-    /* flex-direction: column-reverse; */
+
     align-items: end;
   }
   .skills-container,
@@ -2342,10 +2301,10 @@ header h2 {
 
   .projects-marksheet {
     margin-top: 5rem;
-    /* position: relative; */
+
     width: 100%;
     height: 10rem;
-    /* gap: 10rem; */
+
     gap: 1rem;
   }
   .projects-marksheet span {
@@ -2361,10 +2320,8 @@ header h2 {
   .page-3 {
     height: 100%;
     margin: 0 auto;
-    /* padding: 10rem 0; */
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     align-items: flex-start;
   }
 
@@ -2432,7 +2389,7 @@ header h2 {
   }
   .paragraph {
     margin: 4rem;
-    width: 99% !important;
+    width: 100% !important;
     margin-bottom: 0;
     margin-top: 1rem;
   }
