@@ -127,12 +127,7 @@ img:hover {
   -webkit-text-fill-color: transparent;
 }
 
-body {
-  background-color: #0d0d0d;
-  color: white;
-  transition: background 0.3s, color 0.3s;
-  overflow-x: hidden;
-}
+
 body.dark {
   background-color: white;
   color: #f1f1f1;
@@ -144,6 +139,11 @@ body.dark.container {
 }
 html,
 body {
+  margin: 0%;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: white;
+  transition: background 0.3s, color 0.3s;
   overflow-x: hidden;
 }
 
@@ -1706,110 +1706,108 @@ input:checked + .slider:before {
 /*  */
 /* skills page-3 */
 #details {
-  height: 10%;
-  width: 100%;
-}
-#details-skills {
-  margin-top: 15%;
-  font-size: 3rem;
-  background: linear-gradient(to top, #6366f1, #a955f7ab);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+      height: 10%;
+      width: 100%;
+    }
 
-.page-3 {
-  height: 100%;
-  max-width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* optional: aligns child divs to left */
-}
+    #details-skills {
+      margin-top: 15%;
+      font-size: 3rem;
+      background: linear-gradient(to top, #6366f1, #a955f7ab);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0; /* Animate in */
+      transform: translateY(50px); /* Start position */
+    }
 
-.skills-section {
-  width: 50%;
-  color: white;
-}
+    .page-3 {
+      height: 100%;
+      max-width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+    }
 
-header h2 {
-  margin-top: 5%;
-}
+    .skills-section {
+      width: 50%;
+      color: white;
+    }
 
-.language-container {
-  margin: 5% 0 10% 0%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
+    header h2 {
+      margin-top: 5%;
+      color: #fff;
+    }
 
-/* ///////////////////////// */
-.language-container .lang {
-  position: relative;
-  border-radius: 50%;
-  padding: 10px;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: popIn 0.6s ease-out forwards;
-  animation-delay: var(--delay, 0s);
-}
+    .language-container {
+      color: white;
+      margin: 5% 0 10% 0%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
 
-.language-container .lang:hover {
-  background: linear-gradient(to right, #6365f177, #a955f783);
-  box-shadow: 0 0 10px 10px #a955f767;
-  border-radius: 50%;
-}
+    .language-container .lang {
+      position: relative;
+      border-radius: 50%;
+      padding: 10px;
+      /* opacity: 1;    */
+      transform: scale(1);
+    }
 
-/* Tooltip inside skill icons */
-.language-container .tooltip {
-  position: absolute;
-  font-weight: 600;
-  top: 0;
-  font-size: 1rem;
-  background: linear-gradient(to right, #a855f7, #a12fff);
-  -webkit-background-clip: text;
-  color: transparent;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease-in-out;
-}
+    .language-container .lang:hover {
+      background: linear-gradient(to right, #6365f177, #a955f783);
+      box-shadow: 0 0 10px 10px #a955f767;
+    }
 
-.language-container .tooltip::before {
-  content: "";
-  position: absolute;
-  height: 8px;
-  width: 8px;
-  background: #fff;
-  bottom: -3px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-}
+    .language-container .tooltip {
+      position: absolute;
+      font-weight: 600;
+      top: 0;
+      font-size: 1rem;
+      background: linear-gradient(to right, #a855f7, #a12fff);
+      -webkit-background-clip: text;
+      color: transparent;
+      padding: 5px 8px;
+      border-radius: 5px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+    }
 
-/* Show tooltip on hover */
-.language-container .lang:hover .tooltip {
-  top: -35px;
-  opacity: 1;
-  pointer-events: auto;
-}
+    .language-container .tooltip::before {
+      content: "";
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      background: #fff;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
 
-/* front-end side */
-.font-end {
-  display: flex;
-  flex-direction: column;
-}
+    .language-container .lang:hover .tooltip {
+      top: -35px;
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-/* /////////////////////// */
-.second-side {
-  height: 70vh;
-  width: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .font-end {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #second-side {
+      height: 70vh;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* opacity: 1; Animate in */
+   
+    }
 
 /* page-4 */
 .connect-me-Text {
@@ -2430,3 +2428,95 @@ header h2 {
     text-align: center;
   }
 }
+
+/*  */
+
+/*  
+    .page-3 {
+      height: 100%;
+      max-width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .skills-section {
+      width: 50%;
+      color: white;
+    }
+
+    header h2 {
+      margin-top: 5%;
+      color: #fff;
+    }
+
+    .language-container {
+      color: white;
+      margin: 5% 0 10% 0%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .language-container .lang {
+      position: relative;
+      border-radius: 50%;
+      padding: 10px;
+      /* opacity: 0; Animate in */
+      transform: scale(1);
+    }
+
+    .language-container .lang:hover {
+      background: linear-gradient(to right, #6365f177, #a955f783);
+      box-shadow: 0 0 10px 10px #a955f767;
+    }
+
+    .language-container .tooltip {
+      position: absolute;
+      font-weight: 600;
+      top: 0;
+      font-size: 1rem;
+      background: linear-gradient(to right, #a855f7, #a12fff);
+      -webkit-background-clip: text;
+      color: transparent;
+      padding: 5px 8px;
+      border-radius: 5px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .language-container .tooltip::before {
+      content: "";
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      background: #fff;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    .language-container .lang:hover .tooltip {
+      top: -35px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .font-end {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #second-side {
+      height: 70vh;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1; /* Animate in */
+   
+    } */

@@ -1,3 +1,15 @@
+// smooth scrooling
+// Initialize Lenis
+const lenis = new Lenis();
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+// raf(); we can use this to start the animation frame loop
+requestAnimationFrame(raf);
+
 // when user refresh the page
 
 window.history.scrollRestoration = "manual"; // Stop browser from restoring scroll
@@ -114,6 +126,9 @@ model.addEventListener("load", () => {
 
 // Gsap animations
 
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 // this is page-2 gsap animation
 gsap.from("#About h2, #About .Text", {
   opacity: 0,
@@ -176,7 +191,7 @@ gsap.from(".details .button-group, .projects-marksheet a", {
   scrollTrigger: {
     trigger: ".details",
     scroller: body,
-    // markers: true,
+    markers: true,
     scrub: 2,
     start: "top 90%",
     end: "bottom 100%",
@@ -205,17 +220,7 @@ gsap.from("#About h2, #About .Text", {
 
 // Animate skills section
 
-// currently not working
-gsap.from("#details", {
-  opacity: 0,
-  y: 100,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#details",
-    start: "top 90%",
-    scroller: "#main", // or remove if not using custom scroll
-  },
-});
+    
 
 // gsap.to(".about-cont", {
 //   transform: "translateY(-150%)",
@@ -232,3 +237,5 @@ gsap.from("#details", {
 //     toggleActions: "play none none reverse",
 //   },
 // });
+
+
