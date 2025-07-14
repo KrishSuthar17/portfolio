@@ -822,9 +822,13 @@ management.</pre>
     </div>
   </div>
 
-  <!-- ✅ GSAP Scroll Animations -->
+  <!-- for a temporary solution, i add the gsap animation script here 
+  i definitely remove this script from js file -->
+
+  <!-- GSAP Scroll Animations -->
   <script>
-    gsap.registerPlugin(ScrollTrigger);
+
+        gsap.registerPlugin(ScrollTrigger);
 
 // 🔹 Skills Title Animation
 gsap.to("#details-skills", {
@@ -859,17 +863,17 @@ gsap.from(".page-3", {
 
 // 🔹 Stagger animation for each .lang icon inside .skills-section
 gsap.from(".language-container .lang", {
-  opacity: 0,
+  opacity: 1,
   y: 50,
-  scale: 0,
+  scale: 1,
   duration: 2,
-  stagger: 0.2,
+  stagger: 1,
   ease: "back.out(1.7)",
   scrollTrigger: {
     trigger: ".skills-section",
     start: "top 80%",
     end: "top 60%",
-    scrub: 1,
+    scrub: 2,
     // markers: true
   }
 });
@@ -889,8 +893,6 @@ gsap.from("#second-side", {
     // markers: true
   }
 });
-
-    
   </script>
 
     
@@ -1033,7 +1035,7 @@ gsap.from("#second-side", {
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
 
 
+<script src="script.js"></script>
 </body>
 <!-- custom script -->
-<script src="script.js"></script>
 </html>
