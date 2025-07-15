@@ -16,11 +16,14 @@
  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
  <!-- GSAP Core -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 
 <!-- GSAP ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 
+<!-- main script -->
+ 
+<script src="script.js" defer></script>
 
   </head>
   <body class="no-scroll">
@@ -780,8 +783,11 @@ management.</pre>
   </div>
 
   <br>
-
+  <br>
+  <br>
   <div id="details">
+    <br>
+
     <h1 id="details-skills" align="center">Skills</h1>
   </div>
 
@@ -833,13 +839,14 @@ management.</pre>
 // 🔹 Skills Title Animation
 gsap.to("#details-skills", {
   opacity: 1,
-  y: 0,
-  duration: 1,
+  y: -100,
+  scale: 1.4,
+  duration: 2,
   ease: "power2.out",
   scrollTrigger: {
     trigger: "#details",
-    start: "top 95%",
-    end: "bottom 75%",
+    start: "top 70%",
+    end: "bottom 60%",
     scrub: 2,
     toggleActions: "play none none reset"
   }
@@ -862,21 +869,23 @@ gsap.from(".page-3", {
 });
 
 // 🔹 Stagger animation for each .lang icon inside .skills-section
-gsap.from(".language-container .lang", {
-  opacity: 1,
-  y: 50,
-  scale: 1,
-  duration: 2,
-  stagger: 1,
-  ease: "back.out(1.7)",
+gsap.from(".header-page-4", { 
+  opacity: 0,
+  duration: 1,
+  y: 100,
+  scale: 0.4,
+  stagger: 0.5,
+  ease: "power2.out",
   scrollTrigger: {
-    trigger: ".skills-section",
+    trigger: ".page-4-block",
+    scroller: "body", 
+    markers: false,
     start: "top 80%",
-    end: "top 60%",
+    end: "bottom 75%",
     scrub: 2,
-    // markers: true
-  }
+  },
 });
+
 
 // 🔹 Right side coding GIF
 gsap.from("#second-side", {
@@ -886,12 +895,31 @@ gsap.from("#second-side", {
   ease: "power2.out",
   scrollTrigger: {
     trigger: ".page-3",
-    start: "top 90%",
-    end: "top 60%",
+    start: "top 61%",
+    end: "top 50%",
     scrub: 2,
     toggleActions: "play none none reset",
     // markers: true
   }
+});
+
+
+// page-4 animation
+gsap.from(".header-page-4",{
+  opacity: 0,
+  duration: 1,
+  y: 100,
+  scale: 0.4,
+  stagger: 0.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    // trigger: ".page-4-block",
+    scroller: "body",
+    markers: true,
+    start: "top 80%",
+    end: "bottom 75%",
+    scrub: 2,
+  },
 });
   </script>
 
@@ -1035,7 +1063,6 @@ gsap.from("#second-side", {
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
 
 
-<script src="script.js"></script>
 </body>
 <!-- custom script -->
 </html>

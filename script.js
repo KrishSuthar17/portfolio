@@ -216,71 +216,7 @@ gsap.from("#About h2, #About .Text", {
 
 
 // page-3 gsap animation
-        gsap.registerPlugin(ScrollTrigger);
 
-// 🔹 Skills Title Animation
-gsap.to("#details-skills", {
-  opacity: 1,
-  y: 0,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: "#details",
-    start: "top 95%",
-    end: "bottom 75%",
-    scrub: 2,
-    toggleActions: "play none none reset"
-  }
-});
-
-// 🔹 Whole .page-3 container animation (scale + fade + move up)
-gsap.from(".page-3", {
-  opacity: 0,
-  y: 60,
-  scale: 0.9,
-  duration: 1.5,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".page-3",
-    start: "top 90%",
-    end: "top 70%",
-    scrub: 2,
-    // markers: true
-  }
-});
-
-// 🔹 Stagger animation for each .lang icon inside .skills-section
-gsap.from(".language-container .lang", {
-  opacity: 1,
-  y: 50,
-  scale: 1,
-  duration: 2,
-  stagger: 1,
-  ease: "back.out(1.7)",
-  scrollTrigger: {
-    trigger: ".skills-section",
-    start: "top 80%",
-    end: "top 60%",
-    scrub: 2,
-    // markers: true
-  }
-});
-
-// 🔹 Right side coding GIF
-gsap.from("#second-side", {
-  opacity: 0,
-  x: 100,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".page-3",
-    start: "top 90%",
-    end: "top 60%",
-    scrub: 2,
-    toggleActions: "play none none reset",
-    // markers: true
-  }
-});
 
 // Animate #details and heading
 
@@ -303,5 +239,6 @@ gsap.from("#second-side", {
 //     toggleActions: "play none none reverse",
 //   },
 // });
+
 
 

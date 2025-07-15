@@ -1717,7 +1717,8 @@ input:checked + .slider:before {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       opacity: 0; /* Animate in */
-      transform: translateY(50px); /* Start position */
+      transform: translateY(50px), scale(0); /* Start position */
+
     }
 
     .page-3 {
@@ -1820,6 +1821,9 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+
 }
 
 #page-4 {
