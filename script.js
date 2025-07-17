@@ -1,7 +1,13 @@
 // smooth scrooling
 // Initialize Lenis
+
 const lenis = new Lenis();
 
+lenis.stop(); // 🔒 disables scrolling
+
+setTimeout(() => {
+  lenis.start(); // ✅ re-enable after 3s
+}, 3000);
 // Use requestAnimationFrame to continuously update the scroll
 function raf(time) {
   lenis.raf(time);
@@ -16,14 +22,17 @@ window.history.scrollRestoration = "manual"; // Stop browser from restoring scro
 window.scrollTo(0, 0);
 
 // 3s user can't scroll logic
-
+// script.js
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.classList.remove("no-scroll");
-    let mainContent = document.getElementsByClassName("main-content");
-    mainContent.style.display = "block";
+    document.documentElement.classList.remove("no-scroll");
+    console.log("✅ Scroll unlocked");
   }, 3000);
 });
+
+
+
 
 const navLinks = document.querySelectorAll("nav ul li a");
 const card1 = document.getElementsByClassName("card1");
@@ -126,6 +135,7 @@ model.addEventListener("load", () => {
 
 // Gsap animations
 
+document.addEventListener("DOMContentLoaded", function () {
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -198,23 +208,8 @@ gsap.from(".details .button-group, .projects-marksheet a", {
   },
 });
 
-gsap.from("#About h2, #About .Text", {
-  opacity: 0,
-  duration: 1,
-  y: 100,
-  scale: 0.4,
-  stagger: 0.5,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: "#About",
-    scroller: "#main", // change to 'body' if not using locomotive
-    start: "top 95%",
-    end: "bottom 75%",
-    scrub: true,
-  },
+
 });
-
-
 // page-3 gsap animation
 
 
@@ -239,6 +234,5 @@ gsap.from("#About h2, #About .Text", {
 //     toggleActions: "play none none reverse",
 //   },
 // });
-
 
 

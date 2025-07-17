@@ -8,10 +8,12 @@
   scrollbar-width: thin;
 }
 /* Prevent scrolling */
-.no-scroll {
+html.no-scroll,
+body.no-scroll {
   overflow: hidden;
   height: 100vh;
 }
+
 
 /* extra */
 
@@ -2333,14 +2335,12 @@ input:checked + .slider:before {
   }
 
   #page-4 {
-    margin: auto;
     height: 100%;
     max-width: 80%;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+
   }
 
   .container {
