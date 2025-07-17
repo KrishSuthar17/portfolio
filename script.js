@@ -98,29 +98,29 @@ border.addEventListener("mouseenter", () => {
 
 // background ball animation
 
-const ball = document.getElementById("ball");
-const sections = document.querySelectorAll(".page");
+// const ball = document.getElementById("ball");
+// const sections = document.querySelectorAll(".page");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // If section is fully in view, move the ball
-        ball.classList.add("move");
+// const observer = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         // If section is fully in view, move the ball
+//         ball.classList.add("move");
 
-        // After short delay, reset it (like toggle effect)
-        setTimeout(() => {
-          ball.classList.remove("move");
-        }, 1000); // adjust delay to match your animation
-      }
-    });
-  },
-  {
-    threshold: 0.6,
-  }
-);
+//         // After short delay, reset it (like toggle effect)
+//         setTimeout(() => {
+//           ball.classList.remove("move");
+//         }, 1000); // adjust delay to match your animation
+//       }
+//     });
+//   },
+//   {
+//     threshold: 0.6,
+//   }
+// );
 
-sections.forEach((section) => observer.observe(section));
+// sections.forEach((section) => observer.observe(section));
 
 // 3d
 
@@ -207,9 +207,98 @@ gsap.from(".details .button-group, .projects-marksheet a", {
     end: "bottom 100%",
   },
 });
-
-
 });
+
+
+
+
+// 🔹 Skills Title Animation
+gsap.to("#details-skills", {
+  opacity: 1,
+  y: -100,
+  scale: 1.4,
+  duration: 2,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "#details",
+    start: "top 70%",
+    end: "bottom 60%",
+    scrub: 2,
+    toggleActions: "play none none reset"
+  }
+});
+
+// 🔹 Whole .page-3 container animation (scale + fade + move up)
+gsap.from(".page-3", {
+  opacity: 0,
+  y: 60,
+  scale: 0.9,
+  duration: 1.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".page-3",
+    start: "top 90%",
+    end: "top 70%",
+    scrub: 2,
+    // markers: true
+  }
+});
+
+// 🔹 Stagger animation for each .lang icon inside .skills-section
+gsap.from(".header-page-4", { 
+  opacity: 0,
+  duration: 1,
+  y: 100,
+  scale: 0.4,
+  stagger: 0.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".page-4-block",
+    scroller: "body", 
+    markers: false,
+    start: "top 80%",
+    end: "bottom 75%",
+    scrub: 2,
+  },
+});
+
+
+// 🔹 Right side coding GIF
+gsap.from("#second-side", {
+  opacity: 0,
+  x: 100,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".page-3",
+    start: "top 61%",
+    end: "top 50%",
+    scrub: 2,
+    toggleActions: "play none none reset",
+    // markers: true
+  }
+});
+
+
+// page-4 animation
+gsap.from(".header-page-4",{
+  opacity: 0,
+  duration: 1,
+  y: 100,
+  scale: 0.4,
+  stagger: 0.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    // trigger: ".page-4-block",
+    scroller: "body",
+    // markers: true,
+    start: "top 80%",
+    end: "bottom 75%",
+    scrub: 2,
+  },
+});
+
+
 // page-3 gsap animation
 
 

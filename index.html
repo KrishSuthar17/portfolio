@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="This website is for my Portfolio" />
     <title>Krish Suthar | Portfolio website</title>
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
+
     <link rel="stylesheet" href="style.css" />
+
     <!-- for website smother add this line -->
     <link
       rel="stylesheet"
@@ -22,7 +25,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 
 <!-- main script -->
- 
 
 
 
@@ -31,7 +33,7 @@
   </head>
   <body class="no-scroll">
     <div class="container">
-      <div class="background scroll-anim" ></div>
+      <div class="background scroll-anim"></div>
       <div class="starter">
         <div class="temp-content">
           <div class="contect top-bottom-t">
@@ -835,103 +837,14 @@ management.</pre>
   i definitely remove this script from js file -->
 
   <!-- GSAP Scroll Animations -->
-  <script>
-
-        gsap.registerPlugin(ScrollTrigger);
-
-// 🔹 Skills Title Animation
-gsap.to("#details-skills", {
-  opacity: 1,
-  y: -100,
-  scale: 1.4,
-  duration: 2,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: "#details",
-    start: "top 70%",
-    end: "bottom 60%",
-    scrub: 2,
-    toggleActions: "play none none reset"
-  }
-});
-
-// 🔹 Whole .page-3 container animation (scale + fade + move up)
-gsap.from(".page-3", {
-  opacity: 0,
-  y: 60,
-  scale: 0.9,
-  duration: 1.5,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".page-3",
-    start: "top 90%",
-    end: "top 70%",
-    scrub: 2,
-    // markers: true
-  }
-});
-
-// 🔹 Stagger animation for each .lang icon inside .skills-section
-gsap.from(".header-page-4", { 
-  opacity: 0,
-  duration: 1,
-  y: 100,
-  scale: 0.4,
-  stagger: 0.5,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".page-4-block",
-    scroller: "body", 
-    markers: false,
-    start: "top 80%",
-    end: "bottom 75%",
-    scrub: 2,
-  },
-});
-
-
-// 🔹 Right side coding GIF
-gsap.from("#second-side", {
-  opacity: 0,
-  x: 100,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".page-3",
-    start: "top 61%",
-    end: "top 50%",
-    scrub: 2,
-    toggleActions: "play none none reset",
-    // markers: true
-  }
-});
-
-
-// page-4 animation
-gsap.from(".header-page-4",{
-  opacity: 0,
-  duration: 1,
-  y: 100,
-  scale: 0.4,
-  stagger: 0.5,
-  ease: "power2.out",
-  scrollTrigger: {
-    // trigger: ".page-4-block",
-    scroller: "body",
-    // markers: true,
-    start: "top 80%",
-    end: "bottom 75%",
-    scrub: 2,
-  },
-});
-  </script>
+  
 
     
 
 
     <div class="page-4-block" >
       <h1 align="center" class="color connect-me-Text">Contact Me</h1>
-      <h3 align="center" style="color: gray; font-weight: 100;">Got a question? Send me a message, and I'll get back to you soon.</h3>
+      <h3 align="center" style="color: gray; font-weight: 100; max-width: 80%;">Got a question? Send me a message, and I'll get back to you soon.</h3>
   </div>
       
     <form action="/" style="margin-top: 5%;">

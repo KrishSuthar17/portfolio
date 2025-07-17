@@ -885,7 +885,7 @@ input:checked + .slider:before {
 .wrapper {
   display: inline-flex;
   list-style: none;
-
+  /* display: block; */
   padding-top: 1.9rem;
   font-family: "Poppins", sans-serif;
   justify-content: center;
@@ -923,6 +923,7 @@ input:checked + .slider:before {
   100% {
     opacity: 1;
     transform: scale(1);
+    /* display: block; */
   }
 }
 
@@ -1236,6 +1237,8 @@ input:checked + .slider:before {
   justify-content: center;
   flex-direction: row;
   column-gap: 1em;
+  position: relative;
+  
   z-index: 1;
 }
 
@@ -2407,9 +2410,9 @@ input:checked + .slider:before {
     margin-top: 1rem;
     }
 
-    img{
+    /* img{
           margin: 0 0 0 14rem;
-    }
+    } */
 
   .main-container {
     width: 100%;
