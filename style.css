@@ -1710,6 +1710,7 @@ input:checked + .slider:before {
 
 /*  */
 /* skills page-3 */
+
 #details-skills {
       margin-top: 15%;
       font-size: 3rem;
@@ -1799,6 +1800,8 @@ input:checked + .slider:before {
       opacity: 0;
       transform: translateX(100px); /* slide in from right */
     }
+
+ 
 
 /* page-4 */
 .connect-me-Text {
@@ -2018,7 +2021,7 @@ input:checked + .slider:before {
   font-size: 1rem;
 }
 
-.icon {
+.button-con .icon {
   position: absolute;
   width: 24px;
   height: 24px;
@@ -2216,7 +2219,7 @@ input:checked + .slider:before {
   }
   to {
     opacity: 0;
-    display: none;
+    /* display: none;  i do because i want to keep the links elements as show thats why*/ 
     z-index: -99;
   }
 }
