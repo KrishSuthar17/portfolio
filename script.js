@@ -237,7 +237,7 @@ gsap.from(".details .button-group, .projects-marksheet a", {
         end: "top -40%",
         scrub: 2,
         pin:true,
-        markers: true
+        // markers: true
       }
     });
 
@@ -281,7 +281,7 @@ gsap.from(".header-page-4", {
   scrollTrigger: {
     trigger: ".page-4-block",
     scroller: "body", 
-    markers: false,
+    // markers: false,
     start: "top 80%",
     end: "bottom 75%",
     scrub: 2,
