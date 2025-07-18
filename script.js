@@ -213,36 +213,62 @@ gsap.from(".details .button-group, .projects-marksheet a", {
 
 
 // 🔹 Skills Title Animation
-gsap.to("#details-skills", {
-  opacity: 1,
-  y: -100,
-  scale: 1.4,
-  duration: 2,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: "#details",
-    start: "top 70%",
-    end: "bottom 60%",
-    scrub: 2,
-    toggleActions: "play none none reset"
-  }
-});
-
-// 🔹 Whole .page-3 container animation (scale + fade + move up)
-gsap.from(".page-3", {
+ gsap.from("#second-side", {
   opacity: 0,
-  y: 60,
-  scale: 0.9,
-  duration: 1.5,
+  x: 100,
+  duration: 1,
   ease: "power2.out",
   scrollTrigger: {
     trigger: ".page-3",
-    start: "top 90%",
-    end: "top 70%",
+    start: "top 50%",
+    end: "top 0%",
     scrub: 2,
+    toggleActions: "play none none reset",
     // markers: true
   }
 });
+
+    // Timeline with step-by-step reveal
+    const tl = gsap.timeline({
+        stagger: 1,
+      scrollTrigger: {
+        trigger: ".page-3",
+        start: "top 20%", // Starts when .page-3 hits 85% of viewport
+        end: "top -40%",
+        scrub: 2,
+        pin:true,
+        markers: true
+      }
+    });
+
+    // 1. Fade & slide in entire .skills-section
+    tl.to(".skills-section", {
+      opacity: 1,
+      x: 0,
+      duration: 1,
+      stagger: 0.8,
+      ease: "power2.out"
+    });
+
+    // 2. Animate all <h2> elements from right
+    tl.to(".skills-section header h2", {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      stagger: 0.3,
+      ease: "power2.out"
+    });
+
+    // 3. Animate all language-container boxes from right
+    tl.to(".language-container", {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      stagger: 0.4,
+      ease: "power2.out"
+    });
+// 🔹 Whole .page-3 container animation (scale + fade + move up)
+
 
 // 🔹 Stagger animation for each .lang icon inside .skills-section
 gsap.from(".header-page-4", { 
@@ -264,20 +290,7 @@ gsap.from(".header-page-4", {
 
 
 // 🔹 Right side coding GIF
-gsap.from("#second-side", {
-  opacity: 0,
-  x: 100,
-  duration: 1,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".page-3",
-    start: "top 61%",
-    end: "top 50%",
-    scrub: 2,
-    toggleActions: "play none none reset",
-    // markers: true
-  }
-});
+
 
 
 // page-4 animation

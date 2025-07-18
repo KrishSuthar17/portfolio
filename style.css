@@ -1710,24 +1710,16 @@ input:checked + .slider:before {
 
 /*  */
 /* skills page-3 */
-#details {
-      height: 10%;
-      width: 100%;
-    }
-
-    #details-skills {
+#details-skills {
       margin-top: 15%;
       font-size: 3rem;
       background: linear-gradient(to top, #6366f1, #a955f7ab);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      opacity: 0; /* Animate in */
-      transform: translateY(50px), scale(0); /* Start position */
-
+      text-align: center;
     }
 
     .page-3 {
-      height: 100%;
       max-width: 80%;
       margin: 0 auto;
       display: flex;
@@ -1738,38 +1730,32 @@ input:checked + .slider:before {
 
     .skills-section {
       width: 50%;
-      color: white;
-    }
-
-    header h2 {
-      margin-top: 5%;
-      color: #fff;
+      opacity: 0; /* animate later */
+      transform: translateX(100px); /* slide from right */
     }
 
     .language-container {
-      opacity: 1;
-      color: white;
-      margin: 5% 0 10% 0%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      cursor: pointer;
+      align-items: center;
+      margin: 30px 0;
+      opacity: 0; /* for animation */
+      transform: translateX(100px); /* animate from right */
     }
 
-    .language-container .lang {
+    .lang.icon {
       position: relative;
       border-radius: 50%;
       padding: 10px;
-      opacity: 1;   
-      transform: scale(1);
+      cursor: pointer;
     }
 
-    .language-container .lang:hover {
+    .lang.icon:hover {
       background: linear-gradient(to right, #6365f177, #a955f783);
       box-shadow: 0 0 10px 10px #a955f767;
     }
 
-    .language-container .tooltip {
+    .tooltip {
       position: absolute;
       font-weight: 600;
       top: 0;
@@ -1784,7 +1770,7 @@ input:checked + .slider:before {
       pointer-events: none;
     }
 
-    .language-container .tooltip::before {
+    .tooltip::before {
       content: "";
       position: absolute;
       height: 8px;
@@ -1795,15 +1781,10 @@ input:checked + .slider:before {
       transform: translateX(-50%) rotate(45deg);
     }
 
-    .language-container .lang:hover .tooltip {
+    .lang:hover .tooltip {
       top: -35px;
       opacity: 1;
       pointer-events: auto;
-    }
-
-    .font-end {
-      display: flex;
-      flex-direction: column;
     }
 
     #second-side {
@@ -1812,8 +1793,11 @@ input:checked + .slider:before {
       display: flex;
       justify-content: center;
       align-items: center;
-      /* opacity: 1; Animate in */
-   
+    }
+
+.skills-section header h2 {
+      opacity: 0;
+      transform: translateX(100px); /* slide in from right */
     }
 
 /* page-4 */
