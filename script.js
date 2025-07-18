@@ -1,8 +1,5 @@
-// smooth scrooling
-// Initialize Lenis
-
+// smooth scrolling
 const lenis = new Lenis();
-
 lenis.stop(); // 🔒 disables scrolling
 
 setTimeout(() => {
@@ -13,27 +10,15 @@ function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
 }
-// raf(); we can use this to start the animation frame loop
 requestAnimationFrame(raf);
 
+//
 // when user refresh the page
-
 window.history.scrollRestoration = "manual"; // Stop browser from restoring scroll
 window.scrollTo(0, 0);
 
-// 3s user can't scroll logic
-// script.js
-window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    document.body.classList.remove("no-scroll");
-    document.documentElement.classList.remove("no-scroll");
-    console.log("✅ Scroll unlocked");
-  }, 3000);
-});
-
-
-
-
+// Navigation active link
+// This code adds an active class to the clicked navigation link
 const navLinks = document.querySelectorAll("nav ul li a");
 const card1 = document.getElementsByClassName("card1");
 
@@ -46,24 +31,46 @@ navLinks.forEach((link) => {
 
 // Theme toggle functionality
 // This code toggles the theme between light and dark mode
-
 const toggle = document.querySelector(".input");
 const body = document.body;
 
-// Load saved theme
+// Target all elements whose color should change in light mode
+const themeColorElements = document.querySelectorAll(
+  "h2 ,.bg-color, .color,.word"
+);
+const bg = document.querySelector(".bg");
+// Function to apply black color in light mode only
+function updateThemeColors() {
+  const isDark = body.classList.contains("dark");
+
+  themeColorElements.forEach((el) => {
+    if (!isDark) {
+      el.style.color = "";
+    } else {
+      el.style.color = "black"; // Reset to default (CSS/inline)
+    }
+  });
+}
+
+// Load theme from localStorage
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark");
   toggle.checked = true;
 }
 
+// Apply correct color based on current theme
+updateThemeColors();
+
+// Toggle theme
 toggle.addEventListener("change", () => {
   body.classList.toggle("dark");
 
-  if (body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-  } else {
-    localStorage.setItem("theme", "light");
-  }
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("dark") ? "dark" : "light"
+  );
+
+  updateThemeColors();
 });
 
 //
@@ -87,7 +94,7 @@ topBtn.addEventListener("click", () => {
   });
 });
 
-// photo shine effect
+// photo shine effect on page-2 about section
 const border = document.querySelector(".border");
 
 border.addEventListener("mouseenter", () => {
@@ -96,34 +103,8 @@ border.addEventListener("mouseenter", () => {
   border.classList.add("shine");
 });
 
-// background ball animation
-
-// const ball = document.getElementById("ball");
-// const sections = document.querySelectorAll(".page");
-
-// const observer = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         // If section is fully in view, move the ball
-//         ball.classList.add("move");
-
-//         // After short delay, reset it (like toggle effect)
-//         setTimeout(() => {
-//           ball.classList.remove("move");
-//         }, 1000); // adjust delay to match your animation
-//       }
-//     });
-//   },
-//   {
-//     threshold: 0.6,
-//   }
-// );
-
-// sections.forEach((section) => observer.observe(section));
-
-// 3d
-
+// 3D model animation
+// This code pauses the 3D model animation after 2 seconds
 const model = document.getElementById("model");
 
 model.addEventListener("load", () => {
@@ -133,87 +114,79 @@ model.addEventListener("load", () => {
   }, 1800);
 });
 
+//
 // Gsap animations
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+  // this is page-2 gsap animation
+  gsap.from("#About h2, #About .Text", {
+    opacity: 0,
+    duration: 1,
+    y: 100,
+    scale: 0.4,
+    stagger: 0.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#About h2",
+      scroller: body,
+      // markers: true,
+      start: "top 95%",
+      end: "bottom 75%",
+      scrub: 2,
+    },
+  });
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-// this is page-2 gsap animation
-gsap.from("#About h2, #About .Text", {
-  opacity: 0,
-  duration: 1,
-  y: 100,
-  scale: 0.4,
-  stagger: 0.5,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: "#About h2",
-    scroller: body,
-    // markers: true,
-    start: "top 95%",
-    end: "bottom 75%",
-    scrub: 2,
-  },
+  gsap.from(".about-section, .about-section .name, .about-section p", {
+    opacity: 0,
+    duration: 2,
+    stagger: 0.5,
+
+    x: -100,
+    scrollTrigger: {
+      trigger: ".about-cont",
+      scroller: body,
+      scrub: 2,
+      start: "top 90%",
+      end: "bottom 80%",
+    },
+  });
+
+  gsap.from(".page-2", {
+    opacity: 0,
+    duration: 2,
+    stagger: 0.2,
+    // y: 100,
+    x: 100,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".about-cont",
+      scroller: body,
+      scrub: 2,
+      start: "top 90%",
+      end: "bottom 80%",
+    },
+  });
+
+  gsap.from(".details .button-group, .projects-marksheet a", {
+    opacity: 0,
+    duration: 2,
+    stagger: 0.5,
+    y: 200,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".details",
+      scroller: body,
+      scrub: 2,
+      start: "top 90%",
+      end: "bottom 100%",
+    },
+  });
 });
-
-gsap.from(".about-section, .about-section .name, .about-section p", {
-  opacity: 0,
-  duration: 2,
-  stagger: 0.5,
-
-  x: -100,
-  // y: 100,
-  scrollTrigger: {
-    trigger: ".about-cont",
-    scroller: body,
-    // markers: true,
-    scrub: 2,
-    start: "top 90%",
-    end: "bottom 80%",
-  },
-});
-
-gsap.from(".page-2", {
-  opacity: 0,
-  duration: 2,
-  stagger: 0.2,
-  // y: 100,
-  x: 100,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".about-cont",
-    scroller: body,
-    // markers: true,
-    scrub: 2,
-    start: "top 90%",
-    end: "bottom 80%",
-  },
-});
-
-gsap.from(".details .button-group, .projects-marksheet a", {
-  opacity: 0,
-  duration: 2,
-  stagger: 0.5,
-  y: 200,
-  // x: 100,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".details",
-    scroller: body,
-    // markers: true,
-    scrub: 2,
-    start: "top 90%",
-    end: "bottom 100%",
-  },
-});
-});
-
-
-
 
 // 🔹 Skills Title Animation
- gsap.from("#second-side", {
+gsap.from("#second-side", {
   opacity: 0,
   x: 100,
   duration: 1,
@@ -224,54 +197,51 @@ gsap.from(".details .button-group, .projects-marksheet a", {
     end: "top 0%",
     scrub: 2,
     toggleActions: "play none none reset",
-    // markers: true
-  }
+  },
 });
 
-    // Timeline with step-by-step reveal
-    const tl = gsap.timeline({
-        stagger: 1,
-      scrollTrigger: {
-        trigger: ".page-3",
-        start: "top 20%", // Starts when .page-3 hits 85% of viewport
-        end: "top -40%",
-        scrub: 2,
-        pin:true,
-        // markers: true
-      }
-    });
+// Timeline with step-by-step reveal
+const tl = gsap.timeline({
+  stagger: 1,
+  scrollTrigger: {
+    trigger: ".page-3",
+    start: "top 20%", // Starts when .page-3 hits 85% of viewport
+    end: "top -40%",
+    scrub: 2,
+    pin: true,
+    // markers: true
+  },
+});
 
-    // 1. Fade & slide in entire .skills-section
-    tl.to(".skills-section", {
-      opacity: 1,
-      x: 0,
-      duration: 1,
-      stagger: 0.8,
-      ease: "power2.out"
-    });
+// 1. Fade & slide in entire .skills-section
+tl.to(".skills-section", {
+  opacity: 1,
+  x: 0,
+  duration: 1,
+  stagger: 0.8,
+  ease: "power2.out",
+});
 
-    // 2. Animate all <h2> elements from right
-    tl.to(".skills-section header h2", {
-      opacity: 1,
-      x: 0,
-      duration: 0.5,
-      stagger: 0.3,
-      ease: "power2.out"
-    });
+// 2. Animate all <h2> elements from right
+tl.to(".skills-section header h2", {
+  opacity: 1,
+  x: 0,
+  duration: 0.5,
+  stagger: 0.3,
+  ease: "power2.out",
+});
 
-    // 3. Animate all language-container boxes from right
-    tl.to(".language-container", {
-      opacity: 1,
-      x: 0,
-      duration: 0.5,
-      stagger: 0.4,
-      ease: "power2.out"
-    });
+// 3. Animate all language-container boxes from right
+tl.to(".language-container", {
+  opacity: 1,
+  x: 0,
+  duration: 0.5,
+  stagger: 0.4,
+  ease: "power2.out",
+});
 // 🔹 Whole .page-3 container animation (scale + fade + move up)
 
-
-// 🔹 Stagger animation for each .lang icon inside .skills-section
-gsap.from(".header-page-4", { 
+gsap.from(".header-page-4", {
   opacity: 0,
   duration: 1,
   y: 100,
@@ -280,61 +250,44 @@ gsap.from(".header-page-4", {
   ease: "power2.out",
   scrollTrigger: {
     trigger: ".page-4-block",
-    scroller: "body", 
-    // markers: false,
+    scroller: "body",
     start: "top 80%",
     end: "bottom 75%",
     scrub: 2,
   },
 });
 
-
-// 🔹 Right side coding GIF
-
-
-
 // page-4 animation
-gsap.from(".header-page-4",{
+gsap.from(".connect-me-Text, .page-4-block h3", {
   opacity: 0,
   duration: 1,
   y: 100,
-  scale: 0.4,
-  stagger: 0.5,
+  scale: 0,
+  stagger: 1,
   ease: "power2.out",
   scrollTrigger: {
-    // trigger: ".page-4-block",
+    trigger: ".page-4-block",
     scroller: "body",
-    // markers: true,
-    start: "top 80%",
+    start: "top 75%",
     end: "bottom 75%",
     scrub: 2,
   },
 });
 
+// Animate all children inside .input__container
+gsap.from(".input__container > *", {
+  scrollTrigger: {
+    trigger: ".input__container",
+    start: "top 80%", // starts when 80% down the page
+    toggleActions: "play 3d behavior 3d",
+    scrub: 2,
+    end: "top 10%",
+    markers: true,
+  },
 
-// page-3 gsap animation
-
-
-// Animate #details and heading
-
-// Animate skills section
-
-    
-
-// gsap.to(".about-cont", {
-//   transform: "translateY(-150%)",
-//   duration: 1,
-//   y: 0,
-//   opacity: 0,
-//   scrollTrigger: {
-//     trigger: ".about-cont",
-//     scroller: body,
-//     markers: true,
-//     start: "top 70%",
-//     end: "bottom center",
-//     scrub: 2,
-//     toggleActions: "play none none reverse",
-//   },
-// });
-
-
+  opacity: 0,
+  x: 100,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power3.out",
+});
